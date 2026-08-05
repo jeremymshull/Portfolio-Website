@@ -1,0 +1,64 @@
+---
+import ButtonLink from '../components/ButtonLink.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Jeremy Shull | Salesforce Developer and Administrator"
+  description="The foundation for Jeremy Shull's recruiter-focused Salesforce Developer and Administrator portfolio."
+>
+  <section class="hero section" aria-labelledby="hero-title">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="eyebrow">Salesforce portfolio foundation</p>
+        <h1 id="hero-title">A clear foundation for a Salesforce portfolio.</h1>
+        <p class="hero__lede">
+          This first release establishes the accessible design and technical foundation. Verified project evidence and professional details will follow in the next approved phases.
+        </p>
+        <div class="button-group" aria-label="Foundation actions">
+          <ButtonLink href="#foundation">Review the foundation</ButtonLink>
+          <ButtonLink href="#contact" variant="secondary">See content status</ButtonLink>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface" id="foundation" aria-labelledby="foundation-title">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">A stable starting point</p>
+        <h2 id="foundation-title">The system is ready for verified content.</h2>
+        <p>
+          The foundation tests the intended typography, spacing, color, components, responsive behavior, and interaction standards without presenting unfinished portfolio claims as fact.
+        </p>
+      </div>
+
+      <div class="foundation-grid">
+        <article>
+          <h3>Clear hierarchy</h3>
+          <p>A wide reading path and restrained surfaces keep professional evidence central.</p>
+        </article>
+        <article>
+          <h3>Accessibility in the foundation</h3>
+          <p>Semantic landmarks, visible focus styles, generous targets, and reduced-motion support provide a tested baseline.</p>
+        </article>
+        <article>
+          <h3>Ready to extend</h3>
+          <p>Reusable Astro components and environment-driven deployment settings support later phases.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact-status" id="contact" aria-labelledby="contact-title">
+    <div class="container contact-status__inner">
+      <div>
+        <p class="eyebrow">Content status</p>
+        <h2 id="contact-title">Contact details are awaiting verification.</h2>
+      </div>
+      <p>
+        Email, resume, LinkedIn, and GitHub actions will be published only after the final destinations are approved.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

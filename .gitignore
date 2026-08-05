@@ -1,0 +1,17 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# build output
+dist/
+.astro/
+
+# local environment
+.env
+.env.*
+!.env.example
+
+# editor and operating-system files
+.DS_Store
+Thumbs.db
+*.log

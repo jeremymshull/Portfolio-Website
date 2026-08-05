@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Jeremy Shull portfolio</title>
+  <rect width="64" height="64" rx="12" fill="#161B22"/>
+  <path d="M19 17h12v23c0 8-4 12-12 12h-3v-9h2c3 0 4-1 4-4V26h-3v-9Zm17 0h12v9H36v-9Zm0 13h12v22H36V30Z" fill="#9DBC7C"/>
+</svg>
