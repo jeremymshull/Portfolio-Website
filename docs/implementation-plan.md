@@ -24,11 +24,13 @@ Validation completed with the supported Node and pnpm versions: frozen-lockfile 
 
 ## Phase 2 — Content architecture
 
-Status: awaiting approval.
+Status: complete — validated on 2026-08-05.
 
-- Define project, skill, and certification schemas.
+- Define runtime schema validation for the project collection and TypeScript types/interfaces for skills and certifications.
 - Add centralized factual content with safe optional fields.
 - Keep unavailable content unpublished and tracked in `content-needs.md`.
+
+Validation completed with Astro content synchronization, strict TypeScript diagnostics, the default production build, and a production build using the repository subpath `/Portfolio-Website`. All four project entries remain draft-only; skills and certifications remain empty pending verified facts.
 
 ## Phase 3 — Homepage
 
@@ -59,6 +61,6 @@ Status: awaiting approval.
 
 ## Phase 7 — Deployment
 
-Status: awaiting repository and production configuration.
+Status: awaiting deployment approval and production URL configuration.
 
 - Add GitHub Pages automation, verify configured subpaths, and finish deployment documentation.

@@ -18,11 +18,17 @@ pnpm check
 pnpm build
 ```
 
+## Content architecture
+
+Project entries live in `src/content/projects` and are validated by `src/content.config.ts`. New entries should remain `draft` until every published field is verified. Public project queries use `getPublishedProjects()` from `src/data/projects.ts` so draft content is excluded by default.
+
+Verified skills and certifications belong in `src/data/skills.ts` and `src/data/certifications.ts`. Both datasets intentionally remain empty until factual records are supplied.
+
 ## Deployment configuration
 
-The project is repository-neutral. Set these environment variables when the production repository and URL are known:
+The repository and GitHub Pages path are known, but the final production URL has not yet been established. Configure deployment with:
 
-- `SITE_URL`: the full production origin, such as `https://example.com`.
-- `BASE_PATH`: the GitHub Pages repository subpath, such as `/portfolio`; use `/` for an apex or custom domain.
+- `SITE_URL`: the final production origin when confirmed.
+- `BASE_PATH`: `/Portfolio-Website` for repository-hosted GitHub Pages; use `/` for an apex or custom domain.
 
 See [docs/implementation-plan.md](docs/implementation-plan.md) for the phased roadmap and [docs/content-needs.md](docs/content-needs.md) for verified content still required.

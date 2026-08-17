@@ -10,3 +10,6 @@
 - Browser QA was completed for desktop, mobile, approximate 200% zoom, mobile-menu behavior, focus visibility, target sizing, overflow, and console errors. Operating-system reduced-motion emulation and a complete manual keyboard traversal remain final human checks.
 - A wide single-column hero is a better Phase 1 verification shell than an internal status panel because it preserves headline readability without introducing final portfolio content.
 - pnpm 11 records approved dependency scripts with `allowBuilds`; using that setting alone avoids redundant esbuild policy.
+- Astro's built-in content collection schema provides validation and generated types without adding a content-system dependency.
+- A draft-first publication state is safer than placeholder copy: verified project names can be modeled now while incomplete evidence remains unavailable to public queries.
+- The skill and certification examples in `design.md` are structural recommendations, not verified personal claims, so their datasets must remain empty until Jeremy confirms them.

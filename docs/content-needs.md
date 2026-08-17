@@ -1,6 +1,6 @@
 # Content needs
 
-These items are non-blocking for the Phase 1 foundation. Do not publish guessed replacements.
+These items are non-blocking for the current content architecture. Do not publish guessed replacements.
 
 ## Identity and conversion
 
@@ -11,15 +11,21 @@ These items are non-blocking for the Phase 1 foundation. Do not publish guessed 
 
 ## Project evidence
 
-- Supply verified summaries, context, business problems, users, solutions, architecture, features, technical decisions, technologies, testing, challenges, lessons, and future improvements for each initial project.
+- Supply verified summaries, context, business problems, users, solutions, architecture, features, technical decisions, technologies, testing, challenges, lessons, and future improvements for each initial project:
+  - Case Intake and SLA Automation;
+  - Slack Contact Quick Action;
+  - Weather Lightning Web Component;
+  - Job Application Tracker.
 - Supply approved repository or demonstration URLs where available.
 - Supply project screenshots or diagrams and descriptive alt text.
 - Clarify whether each project is personal, training, volunteer, or professional work.
+- All four project entries are intentionally marked `draft` and remain excluded from published queries until their content is verified.
 
 ## Certifications and skills
 
 - Confirm current Salesforce certification names, issuer details, dates, and verification URLs.
 - Confirm the final skills list and remove any technology not supported by project evidence.
+- The centralized skills and certification datasets are intentionally empty until these facts are supplied.
 
 ## Existing images
 
@@ -29,5 +35,5 @@ These items are non-blocking for the Phase 1 foundation. Do not publish guessed 
 
 ## Deployment and metadata
 
-- Supply the production URL and GitHub repository name/base path.
+- Supply the production URL and confirm whether GitHub Pages will use the current `/Portfolio-Website` repository path or a custom domain.
 - Supply the final site description and approved social-sharing image.

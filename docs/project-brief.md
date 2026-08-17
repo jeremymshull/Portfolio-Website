@@ -34,4 +34,4 @@ The planned content system will eventually support Case Intake and SLA Automatio
 
 ## Current scope
 
-Phase 0 and Phase 1 only: project initialization, documentation, global design tokens, shared layout, accessible header and navigation, footer, reusable button, link styles, and a minimal homepage foundation.
+Phase 0 through Phase 2: project initialization, design foundation, and a typed content architecture. The four verified project names exist as unpublished draft entries; skills and certifications remain unpublished until factual records are supplied. Full homepage and case-study presentation begin in later approved phases.
