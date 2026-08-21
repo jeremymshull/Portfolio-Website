@@ -22,7 +22,7 @@ pnpm build
 
 Project entries live in `src/content/projects` and are validated by `src/content.config.ts`. New entries should remain `draft` until every published field is verified. Public project queries use `getPublishedProjects()` from `src/data/projects.ts` so draft content is excluded by default.
 
-Verified skills and certifications belong in `src/data/skills.ts` and `src/data/certifications.ts`. Both datasets intentionally remain empty until factual records are supplied.
+Verified skills and certifications live in `src/data/skills.ts` and `src/data/certifications.ts`. Homepage identity, contact, role, and availability content is centralized in `src/data/site.ts`. `docs/content-source.md` remains the factual source of truth for portfolio content.
 
 ## Deployment configuration
 

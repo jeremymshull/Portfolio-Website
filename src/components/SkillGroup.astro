@@ -1,0 +1,16 @@
+---
+import type { Skill } from '../types/content';
+import TagList from './TagList.astro';
+
+interface Props {
+  title: string;
+  skills: readonly Skill[];
+}
+
+const { title, skills } = Astro.props;
+---
+
+<article class="skill-group">
+  <h3>{title}</h3>
+  <TagList items={skills.map((skill) => skill.name)} label={`${title} skills`} />
+</article>

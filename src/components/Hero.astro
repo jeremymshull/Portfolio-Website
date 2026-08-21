@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets';
+import heroImage from '../../source-assets/images/jeremy-shull-hero.jpg';
+import { siteProfile } from '../data/site';
+import ButtonLink from './ButtonLink.astro';
+
+const resumePath = `${import.meta.env.BASE_URL}resume/Jeremy-Shull-Salesforce-Resume.pdf`;
+---
+
+<section class="hero section" aria-labelledby="hero-title">
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <p class="eyebrow">{siteProfile.label}</p>
+      <h1 id="hero-title">{siteProfile.headline}</h1>
+      <p class="hero__lede">{siteProfile.introduction}</p>
+      <div class="button-group" aria-label="Portfolio actions">
+        <ButtonLink href="#projects">View my projects</ButtonLink>
+        <ButtonLink href={resumePath} variant="secondary" download="Jeremy-Shull-Salesforce-Resume.pdf">
+          Download my resume
+        </ButtonLink>
+      </div>
+      <p class="hero__roles">{siteProfile.targetRoles}</p>
+    </div>
+
+    <figure class="hero__portrait">
+      <Image
+        src={heroImage}
+        alt="Jeremy Shull smiling beside a brick wall outdoors."
+        widths={[480, 720, 960, 1440]}
+        sizes="(min-width: 64rem) 70vw, 100vw"
+        loading="eager"
+        quality={84}
+      />
+    </figure>
+  </div>
+</section>

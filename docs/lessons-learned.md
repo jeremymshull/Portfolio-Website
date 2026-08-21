@@ -13,3 +13,10 @@
 - Astro's built-in content collection schema provides validation and generated types without adding a content-system dependency.
 - A draft-first publication state is safer than placeholder copy: verified project names can be modeled now while incomplete evidence remains unavailable to public queries.
 - The skill and certification examples in `design.md` are structural recommendations, not verified personal claims, so their datasets must remain empty until Jeremy confirms them.
+
+## 2026-08-17
+
+- A detailed factual source document makes it possible to publish a complete recruiter-first homepage without inferring credentials, outcomes, private links, or project classifications.
+- Astro's responsive local-image generation requires `sharp` during production builds; browser development alone does not expose that missing dependency.
+- A fixed-height grid media panel must drop its mobile aspect ratio at the wide prominent-card breakpoint, or a wide screenshot can overflow its assigned column and reduce adjacent text contrast.
+- Keeping original photographs in `source-assets` while importing them through Astro preserves the source files and produces optimized public derivatives. The resume follows the same preservation principle: the approved source remains intact and a public download copy uses the approved filename.

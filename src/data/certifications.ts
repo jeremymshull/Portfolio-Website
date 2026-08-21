@@ -1,7 +1,22 @@
 import type { Certification } from '../types/content';
+import { siteProfile } from './site';
 
-// Certifications remain empty until their names and issuer details are verified.
-export const certifications: readonly Certification[] = [];
+export const certifications: readonly Certification[] = [
+  {
+    name: 'Salesforce Certified Administrator',
+    issuer: 'Salesforce',
+    earnedDate: 'July 2025',
+    verificationUrl: siteProfile.trailhead,
+    publicationStatus: 'published',
+  },
+  {
+    name: 'Salesforce Platform Developer I',
+    issuer: 'Salesforce',
+    earnedDate: 'January 2025',
+    verificationUrl: siteProfile.trailhead,
+    publicationStatus: 'published',
+  },
+];
 
 export function getPublishedCertifications() {
   return certifications.filter((certification) => certification.publicationStatus === 'published');

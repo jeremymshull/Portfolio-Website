@@ -3,10 +3,11 @@ interface Props {
   href: string;
   variant?: 'primary' | 'secondary';
   external?: boolean;
+  download?: string | boolean;
   class?: string;
 }
 
-const { href, variant = 'primary', external = false, class: className } = Astro.props;
+const { href, variant = 'primary', external = false, download, class: className } = Astro.props;
 ---
 
 <a
@@ -14,6 +15,7 @@ const { href, variant = 'primary', external = false, class: className } = Astro.
   href={href}
   target={external ? '_blank' : undefined}
   rel={external ? 'noreferrer noopener' : undefined}
+  download={download}
 >
   <slot />
 </a>

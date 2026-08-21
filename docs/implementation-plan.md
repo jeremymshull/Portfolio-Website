@@ -30,15 +30,32 @@ Status: complete — validated on 2026-08-05.
 - Add centralized factual content with safe optional fields.
 - Keep unavailable content unpublished and tracked in `content-needs.md`.
 
-Validation completed with Astro content synchronization, strict TypeScript diagnostics, the default production build, and a production build using the repository subpath `/Portfolio-Website`. All four project entries remain draft-only; skills and certifications remain empty pending verified facts.
+Validation completed with Astro content synchronization, strict TypeScript diagnostics, the default production build, and a production build using the repository subpath `/Portfolio-Website`. The phase established draft-first project records and typed skill and certification datasets; Phase 3 later populated them from verified source content.
 
 ## Phase 3 — Homepage
 
-Status: awaiting approval.
+Status: complete — validated on 2026-08-21.
 
 - Build the full recruiter-first homepage in the order defined by `design.md`.
 - Add verified project, About, skill, certification, and contact previews.
 - Review the 30-second recruiter scan goal.
+
+Validation completed with strict Astro diagnostics, the default production build, the GitHub Pages production build using `/Portfolio-Website`, rendered browser review, image-alt and landmark review, link/path inspection, and horizontal-overflow checks. A complete manual keyboard traversal, operating-system reduced-motion verification, and physical-device testing remain pre-launch human checks.
+
+## Post-Phase-3 checkpoint — Security and SEO readiness
+
+Status: complete — audited on 2026-08-21.
+
+Before substantive Phase 4 expansion, run a read-only architecture-level security and SEO audit so publication, routing, or metadata issues are caught before pages multiply.
+
+- Review source and generated output for secrets, credentials, tokens, private environment data, internal documentation, source-only assets, unintended client-side data, and unpublished content. Reassess dependencies and any attack surface introduced by forms, APIs, authentication, analytics, third-party scripts, unsafe HTML, or user-controlled input.
+- Review reusable titles, descriptions, canonical URLs, Open Graph and social metadata, heading structure, crawlable navigation, clean public routing, future sitemap and `robots.txt` support, verified structured-data readiness, and mobile and performance considerations. Final production-domain SEO remains incomplete until deployment.
+
+## Project-wide security and SEO safeguards
+
+- Never place secrets in client-side code or public repository content. Do not commit `.env` files or credentials; anything committed to a public repository must be treated as publicly readable. Draft status and `robots.txt` control publication or crawler behavior, not confidentiality.
+- Adding backend forms, APIs, authentication, analytics, or third-party services requires renewed security and privacy review.
+- SEO metadata and structured data must use verified portfolio facts only. Each public page should receive page-specific metadata, the final origin must remain configurable until deployment is decided, and only published project routes may become indexable URLs.
 
 ## Phase 4 — Project system
 
@@ -52,15 +69,20 @@ Status: awaiting approval.
 
 - Build Skills, Certifications, About, Contact, and 404 routes.
 
-## Phase 6 — Quality review
+## Phase 6 — Quality, accessibility, security, and SEO review
 
 Status: awaiting approval.
 
-- Apply the Taste skill as a critique layer beneath `design.md`.
-- Test responsive behavior, accessibility, content accuracy, performance, metadata, and links.
+- Apply the Taste skill as a visual critique layer beneath the authoritative `design.md`.
+- Validate accessibility, responsive behavior, content accuracy, mobile usability, image optimization, and performance.
+- Complete the pre-launch security review: scan the repository and generated `dist/`, audit dependencies, inspect client bundles for secrets or unintended data, verify that only intended public content is built, review external resources, confirm the expected static attack surface, and assess any later forms or user-controlled input.
+- Complete the pre-launch SEO review: verify unique titles, descriptions, canonical URLs, Open Graph and social-image handling, sitemap generation, `robots.txt`, semantic headings, crawlable internal links, published-content indexability, unpublished-content exclusion, verified structured data, broken links and 404 behavior, mobile usability, image optimization, and performance.
 
 ## Phase 7 — Deployment
 
 Status: awaiting deployment approval and production URL configuration.
 
-- Add GitHub Pages automation, verify configured subpaths, and finish deployment documentation.
+- Add and review the GitHub Pages workflow with least-privilege permissions and deliberately controlled or pinned third-party actions where practical. Verify HTTPS, final public output, appropriate repository or branch protections and required checks, and custom-domain security only if a custom domain is adopted.
+- Configure the final production `site` origin and base path, then verify live canonical URLs, metadata, sitemap, `robots.txt`, and indexability against the actual deployed URL.
+- If the owner chooses to use Google Search Console, connect and verify it, expose or submit the sitemap for discovery, and perform final search-engine indexability checks.
+- Finish deployment and operational documentation without claiming an unconfirmed production URL or custom domain.

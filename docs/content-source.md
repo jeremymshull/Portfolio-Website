@@ -119,7 +119,7 @@ General Trailhead profile: [https://www.salesforce.com/trailblazer/shull12](http
 - **Publish:** Yes
 - **Placement:** Homepage hero
 - **Responsive crop / focal priority:** Upper body
-- **Alt text:** **Placeholder — inspect the final crop and write descriptive alt text before publication**
+- **Alt text:** Jeremy Shull smiling beside a brick wall outdoors.
 
 ### About photo
 
@@ -127,7 +127,7 @@ General Trailhead profile: [https://www.salesforce.com/trailblazer/shull12](http
 - **Publish:** Yes
 - **Placement:** About section
 - **Responsive crop / focal priority:** Upper body
-- **Alt text:** **Placeholder — inspect the final crop and write descriptive alt text before publication**
+- **Alt text:** Jeremy Shull standing outdoors in warm evening light.
 
 ## Project evidence
 

@@ -1,4 +1,6 @@
 ---
+import { siteProfile } from '../data/site';
+
 const currentYear = new Date().getFullYear();
 const homePath = import.meta.env.BASE_URL;
 ---
@@ -7,10 +9,12 @@ const homePath = import.meta.env.BASE_URL;
   <div class="container site-footer__inner">
     <div>
       <a class="site-footer__name" href={homePath}>Jeremy Shull</a>
-      <p>Salesforce Developer and Administrator portfolio.</p>
+      <p>Salesforce Developer and Administrator building practical platform solutions.</p>
     </div>
     <div class="site-footer__meta">
-      <a href={`${homePath}#contact`}>Contact status</a>
+      <a href={`mailto:${siteProfile.email}`}>Email</a>
+      <a href={siteProfile.linkedin} target="_blank" rel="noreferrer noopener">LinkedIn</a>
+      <a href={siteProfile.github} target="_blank" rel="noreferrer noopener">GitHub</a>
       <span>&copy; {currentYear}</span>
     </div>
   </div>

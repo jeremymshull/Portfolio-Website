@@ -30,8 +30,8 @@ Create a modern, static Salesforce Developer and Administrator portfolio that he
 
 ## Initial project scope
 
-The planned content system will eventually support Case Intake and SLA Automation, Slack Contact Quick Action, Weather Lightning Web Component, and Job Application Tracker. Their details are not included in the Phase 1 shell because verified content has not yet been supplied.
+The content system supports Case Intake and SLA Automation, Slack Contact Quick Action, Weather Lightning Web Component, and Job Application Tracker. Homepage summaries and supporting evidence are published only from verified content; deeper case-study presentation remains assigned to Phase 4.
 
 ## Current scope
 
-Phase 0 through Phase 2: project initialization, design foundation, and a typed content architecture. The four verified project names exist as unpublished draft entries; skills and certifications remain unpublished until factual records are supplied. Full homepage and case-study presentation begin in later approved phases.
+Phase 0 through Phase 3: project initialization, design foundation, typed content architecture, and the full recruiter-first homepage. The homepage publishes verified identity, project, About, skills, certifications, resume, and contact content. Project index and case-study routes remain assigned to Phase 4.

@@ -1,0 +1,20 @@
+---
+import type { Certification } from '../types/content';
+
+interface Props {
+  certification: Certification;
+}
+
+const { certification } = Astro.props;
+---
+
+<article class="certification-card">
+  <p class="certification-card__issuer">{certification.issuer} certification</p>
+  <h3>{certification.name}</h3>
+  {certification.earnedDate && <p class="certification-card__date">Earned {certification.earnedDate}</p>}
+  {certification.verificationUrl && (
+    <a href={certification.verificationUrl} target="_blank" rel="noreferrer noopener">
+      Verify on Trailhead<span class="visually-hidden">: {certification.name}</span>
+    </a>
+  )}
+</article>

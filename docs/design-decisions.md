@@ -34,6 +34,18 @@ Projects use Astro's built-in content collection and schema support, so Phase 2 
 
 Skills and certifications use typed centralized datasets. They remain empty rather than turning the design file's recommended examples into personal claims. The provided public-facing project query helper filters out unpublished records, optional project arrays require at least one meaningful value when present, and the project schema prevents publication without verified context, summary, business problem, solution, and technology data.
 
+## 2026-08-17 — Phase 3 homepage
+
+The homepage follows the `design.md` order: hero, featured projects, About, skills, certifications, and contact. `docs/content-source.md` supplies every personal fact, project statement, role, credential, link, and availability claim. The first project is visually prominent, while the remaining three use equal evidence cards; no Phase 4 case-study routes or unavailable private links were introduced.
+
+Both approved portraits are imported from their preserved source assets, use reviewed descriptive alt text, and receive CSS focal positioning without altering the originals. The approved Case Intake and Weather LWC screenshots are published on their corresponding project cards from preserved source assets with reviewed descriptive alt text.
+
+Astro's local image pipeline requires `sharp` for production optimization, so Phase 3 adds it as a direct dependency. The Taste skill influenced hierarchy, spacing, card contrast, and recruiter-scan critique; its GSAP, React, Satoshi, randomization, and oversized-motion requirements remain rejected where they conflict with `design.md`, repository rules, and the approved phase scope.
+
+## 2026-08-19 — Hero portrait fade
+
+At desktop widths, the approved hero portrait now occupies the right side of the hero behind the content and transitions into the charcoal background through an image mask and layered CSS gradients. The portrait uses a contained, right-aligned crop so more of the original composition remains visible and the face does not become disproportionately large. The desktop frame background is transparent, preventing a vertical surface seam; the mask and gradients soften the actual image edge while preserving natural skin tones and maintaining readable contrast without altering the source photograph. Narrow layouts retain the separate framed portrait so the text and image do not compete for limited space. No animation or additional dependency was introduced.
+
 ## Deviations from the design system
 
-None. The Phase 1 shell intentionally omits later homepage sections rather than filling them with invented content.
+None for Phase 3. Later routes and richer case-study presentation remain intentionally deferred to their assigned phases.

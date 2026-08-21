@@ -38,4 +38,5 @@
 - Work only within the approved phase in `docs/implementation-plan.md`.
 - Run `pnpm check` and `pnpm build` after implementation changes.
 - Fix errors introduced by the current work before handing off.
+- Before finishing a phase, run the read-only audit in `docs/phase-audit.md` and report its findings before making any audit-driven fixes.
 - Do not commit unless the user explicitly authorizes it.

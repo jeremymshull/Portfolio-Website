@@ -1,64 +1,143 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import aboutImage from '../../source-assets/images/jeremy-shull-about.jpg';
+import caseNotificationImage from '../../source-assets/images/case-sla-notification-email.png';
+import weatherSearchImage from '../../source-assets/images/weather-lwc-search.png';
 import ButtonLink from '../components/ButtonLink.astro';
+import CertificationCard from '../components/CertificationCard.astro';
+import Hero from '../components/Hero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import SkillGroup from '../components/SkillGroup.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getPublishedCertifications } from '../data/certifications';
+import { getPublishedProjects } from '../data/projects';
+import { getPublishedSkills } from '../data/skills';
+import { siteProfile } from '../data/site';
+import { skillCategories } from '../types/content';
+
+const projects = await getPublishedProjects();
+const skills = getPublishedSkills();
+const certifications = getPublishedCertifications();
+const projectImages: Partial<Record<string, ImageMetadata>> = {
+  'case-intake-and-sla-automation': caseNotificationImage,
+  'weather-lightning-web-component': weatherSearchImage,
+};
 ---
 
 <BaseLayout
   title="Jeremy Shull | Salesforce Developer and Administrator"
-  description="The foundation for Jeremy Shull's recruiter-focused Salesforce Developer and Administrator portfolio."
+  description={siteProfile.description}
 >
-  <section class="hero section" aria-labelledby="hero-title">
-    <div class="container hero__inner">
-      <div class="hero__content">
-        <p class="eyebrow">Salesforce portfolio foundation</p>
-        <h1 id="hero-title">A clear foundation for a Salesforce portfolio.</h1>
-        <p class="hero__lede">
-          This first release establishes the accessible design and technical foundation. Verified project evidence and professional details will follow in the next approved phases.
+  <Hero />
+
+  <section class="section section--surface" id="projects" aria-labelledby="projects-title">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Featured Salesforce projects"
+        title="Practical systems built around real workflows."
+        description="Selected work spanning case operations, Lightning development, integrations, and process automation."
+        id="projects-title"
+      />
+
+      <div class="project-grid">
+        {projects.map((project, index) => (
+          <ProjectCard
+            project={project}
+            image={projectImages[project.id]}
+            prominent={index === 0}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="container about-grid">
+      <figure class="about-portrait">
+        <Image
+          src={aboutImage}
+          alt="Jeremy Shull standing outdoors in warm evening light."
+          widths={[480, 720, 960]}
+          sizes="(min-width: 75rem) 34rem, (min-width: 48rem) 45vw, 100vw"
+          quality={84}
+        />
+      </figure>
+
+      <div class="about-copy">
+        <p class="eyebrow">About Jeremy</p>
+        <h2 id="about-title">Focused on useful Salesforce systems.</h2>
+        <p>{siteProfile.introduction}</p>
+        <p>{siteProfile.targetRoles}</p>
+        <dl class="availability-list">
+          <div>
+            <dt>Based in</dt>
+            <dd>{siteProfile.location}</dd>
+          </div>
+          <div>
+            <dt>Availability</dt>
+            <dd>{siteProfile.availability}</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface" id="skills" aria-labelledby="skills-title">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Salesforce capabilities"
+        title="Platform knowledge connected to delivery."
+        description="Administration, development, integrations, and working practices represented across verified project work and training."
+        id="skills-title"
+      />
+
+      <div class="skills-grid">
+        {skillCategories.map((category) => (
+          <SkillGroup title={category} skills={skills.filter((skill) => skill.category === category)} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="certifications" aria-labelledby="certifications-title">
+    <div class="container certifications-layout">
+      <SectionHeading
+        eyebrow="Salesforce certifications"
+        title="Credentials backed by continued platform work."
+        description="Current Salesforce certifications with verification available through Jeremy’s Trailhead profile."
+        id="certifications-title"
+      />
+
+      <div class="certification-grid">
+        {certifications.map((certification) => (
+          <CertificationCard certification={certification} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact-cta" id="contact" aria-labelledby="contact-title">
+    <div class="container contact-cta__inner">
+      <div>
+        <p class="eyebrow">Start a conversation</p>
+        <h2 id="contact-title">Let’s talk about Salesforce work.</h2>
+        <p>
+          Open to remote roles, opportunities across Greater Indianapolis and Central Indiana, and freelance or consulting conversations.
         </p>
-        <div class="button-group" aria-label="Foundation actions">
-          <ButtonLink href="#foundation">Review the foundation</ButtonLink>
-          <ButtonLink href="#contact" variant="secondary">See content status</ButtonLink>
+      </div>
+
+      <div class="contact-cta__actions">
+        <div class="button-group">
+          <ButtonLink href={`mailto:${siteProfile.email}`}>Email Jeremy</ButtonLink>
+          <ButtonLink href={siteProfile.linkedin} variant="secondary" external>Connect on LinkedIn</ButtonLink>
+        </div>
+        <div class="contact-links" aria-label="Professional profiles">
+          <a href={siteProfile.github} target="_blank" rel="noreferrer noopener">GitHub profile</a>
+          <a href={siteProfile.trailhead} target="_blank" rel="noreferrer noopener">Trailhead profile</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section section--surface" id="foundation" aria-labelledby="foundation-title">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">A stable starting point</p>
-        <h2 id="foundation-title">The system is ready for verified content.</h2>
-        <p>
-          The foundation tests the intended typography, spacing, color, components, responsive behavior, and interaction standards without presenting unfinished portfolio claims as fact.
-        </p>
-      </div>
-
-      <div class="foundation-grid">
-        <article>
-          <h3>Clear hierarchy</h3>
-          <p>A wide reading path and restrained surfaces keep professional evidence central.</p>
-        </article>
-        <article>
-          <h3>Accessibility in the foundation</h3>
-          <p>Semantic landmarks, visible focus styles, generous targets, and reduced-motion support provide a tested baseline.</p>
-        </article>
-        <article>
-          <h3>Ready to extend</h3>
-          <p>Reusable Astro components and environment-driven deployment settings support later phases.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section contact-status" id="contact" aria-labelledby="contact-title">
-    <div class="container contact-status__inner">
-      <div>
-        <p class="eyebrow">Content status</p>
-        <h2 id="contact-title">Contact details are awaiting verification.</h2>
-      </div>
-      <p>
-        Email, resume, LinkedIn, and GitHub actions will be published only after the final destinations are approved.
-      </p>
     </div>
   </section>
 </BaseLayout>
