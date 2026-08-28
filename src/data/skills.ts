@@ -12,7 +12,11 @@ export const skills: readonly Skill[] = [
     'Permission Sets',
     'Custom Objects / Data Modeling',
     'Web-to-Case',
-  ].map((name) => ({ name, category: 'Salesforce Platform' as const, publicationStatus: published })),
+  ].map((name) => ({
+    name,
+    category: 'Salesforce Platform and Administration' as const,
+    publicationStatus: published,
+  })),
   ...[
     'Apex',
     'Scheduled Apex',
@@ -25,11 +29,15 @@ export const skills: readonly Skill[] = [
     'CSS',
     'Unit Testing',
     'HttpCalloutMock',
-  ].map((name) => ({ name, category: 'Development' as const, publicationStatus: published })),
+  ].map((name) => ({
+    name,
+    category: 'Salesforce Development' as const,
+    publicationStatus: published,
+  })),
   ...['REST Callouts', 'REST APIs', 'JSON Parsing and Response Handling', 'Named Credentials'].map(
     (name) => ({
       name,
-      category: 'Automation and Integration' as const,
+      category: 'Integrations' as const,
       publicationStatus: published,
     }),
   ),
@@ -38,13 +46,19 @@ export const skills: readonly Skill[] = [
     'VS Code',
     'Salesforce CLI',
     'Jira',
+  ].map((name) => ({ name, category: 'Tools' as const, publicationStatus: published })),
+  ...[
     'Process Optimization',
     'Stakeholder Communication',
     'End-User Training & Support',
     'Requirements Gathering',
     'Problem Solving',
     'Cross-Functional Collaboration',
-  ].map((name) => ({ name, category: 'Tools and Practices' as const, publicationStatus: published })),
+  ].map((name) => ({
+    name,
+    category: 'Business and Operations' as const,
+    publicationStatus: published,
+  })),
 ];
 
 export function getPublishedSkills() {

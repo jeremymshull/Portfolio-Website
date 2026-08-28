@@ -3,14 +3,16 @@ import type { Certification } from '../types/content';
 
 interface Props {
   certification: Certification;
+  headingLevel?: 2 | 3;
 }
 
-const { certification } = Astro.props;
+const { certification, headingLevel = 3 } = Astro.props;
+const Heading = `h${headingLevel}` as 'h2' | 'h3';
 ---
 
 <article class="certification-card">
   <p class="certification-card__issuer">{certification.issuer} certification</p>
-  <h3>{certification.name}</h3>
+  <Heading>{certification.name}</Heading>
   {certification.earnedDate && <p class="certification-card__date">Earned {certification.earnedDate}</p>}
   {certification.verificationUrl && (
     <a href={certification.verificationUrl} target="_blank" rel="noreferrer noopener">

@@ -20,7 +20,7 @@
 - Use Astro, TypeScript, semantic HTML, modern CSS, static generation, and minimal vanilla JavaScript.
 - Keep content separate from presentation when the content system is introduced.
 - Do not add React, Vue, Svelte, Tailwind, Bootstrap, a CMS, a database, server-side rendering, or a large animation library without a verified requirement and approval.
-- Keep production `SITE_URL` and GitHub Pages `BASE_PATH` configurable; never hardcode an unknown repository name.
+- Keep the production `SITE_URL` configurable until the final Vercel origin is known. Retain configurable `BASE_PATH` support for repository-subpath compatibility testing, but do not treat `/Portfolio-Website` as the final production path.
 - Add dependencies only when they have a clear foundation or product purpose.
 - Do not add analytics, cookies, tracking pixels, or third-party forms without approval.
 

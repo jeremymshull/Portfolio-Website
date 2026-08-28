@@ -1,0 +1,27 @@
+---
+import CertificationCard from '../components/CertificationCard.astro';
+import PageHero from '../components/PageHero.astro';
+import { getPublishedCertifications } from '../data/certifications';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const certifications = getPublishedCertifications();
+---
+
+<BaseLayout
+  title="Salesforce certifications | Jeremy Shull"
+  description="Salesforce Administrator and Platform Developer I certifications with Trailhead profile verification."
+>
+  <PageHero
+    eyebrow="Certifications"
+    title="Verified Salesforce credentials."
+    description="Current Salesforce certifications with verification available through Jeremy's Trailhead profile."
+  />
+
+  <section class="section section--surface" aria-label="Salesforce certifications">
+    <div class="container credential-list">
+      {certifications.map((certification) => (
+        <CertificationCard certification={certification} headingLevel={2} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

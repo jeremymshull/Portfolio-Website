@@ -22,15 +22,17 @@ pnpm build
 
 Project entries live in `src/content/projects` and are validated by `src/content.config.ts`. New entries should remain `draft` until every published field is verified. Public project queries use `getPublishedProjects()` from `src/data/projects.ts` so draft content is excluded by default.
 
-Published projects appear at `/projects/` and receive static case-study routes at `/projects/<project-id>/`. Route generation uses the same published-only query. Approved project images are mapped centrally in `src/data/project-images.ts`; projects without approved public media display an explicit availability state.
+Published projects appear at `/projects/` and receive static case-study routes at `/projects/<project-id>/`. Route generation uses the same published-only query. Approved project images are mapped centrally in `src/data/project-images.ts`. The current pre-Phase-6 list surfaces use approved screenshots or explicit availability states; Phase 6 will replace those list visuals with consistent generated project title cards while keeping approved real evidence primarily on case-study pages.
+
+Standalone supporting routes are available at `/skills/`, `/certifications/`, `/about/`, and `/contact/`. The custom `404.html` page is generated with `noindex, follow` metadata.
 
 Verified skills and certifications live in `src/data/skills.ts` and `src/data/certifications.ts`. Homepage identity, contact, role, and availability content is centralized in `src/data/site.ts`. `docs/content-source.md` remains the factual source of truth for portfolio content.
 
 ## Deployment configuration
 
-The repository and GitHub Pages path are known, but the final production URL has not yet been established. Configure deployment with:
+Vercel Hobby is the chosen production hosting target, connected to the private GitHub source repository. The final Vercel production URL has not yet been established, and no custom domain has been selected. Keep deployment values configurable:
 
-- `SITE_URL`: the final production origin when confirmed.
-- `BASE_PATH`: `/Portfolio-Website` for repository-hosted GitHub Pages; use `/` for an apex or custom domain.
+- `SITE_URL`: the final Vercel production origin when confirmed.
+- `BASE_PATH`: `/` for the planned Vercel deployment. `/Portfolio-Website` remains available only for the repository-subpath compatibility builds used during earlier validation.
 
 See [docs/implementation-plan.md](docs/implementation-plan.md) for the phased roadmap and [docs/content-needs.md](docs/content-needs.md) for verified content still required.

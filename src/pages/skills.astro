@@ -1,0 +1,44 @@
+---
+import ButtonLink from '../components/ButtonLink.astro';
+import PageHero from '../components/PageHero.astro';
+import SkillGroup from '../components/SkillGroup.astro';
+import { getPublishedSkills } from '../data/skills';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { skillCategories } from '../types/content';
+
+const skills = getPublishedSkills();
+const projectsPath = `${import.meta.env.BASE_URL}projects/`;
+---
+
+<BaseLayout
+  title="Salesforce skills | Jeremy Shull"
+  description="Verified Salesforce platform, development, integration, tooling, and business capabilities represented across project work and training."
+>
+  <PageHero
+    eyebrow="Skills"
+    title="Verified Salesforce capabilities."
+    description="Verified platform, development, integration, tooling, and business capabilities represented across project work and training."
+  />
+
+  <section class="section section--surface" aria-label="Salesforce skill directory">
+    <div class="container skill-directory">
+      {skillCategories.map((category) => (
+        <SkillGroup
+          title={category}
+          skills={skills.filter((skill) => skill.category === category)}
+          headingLevel={2}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="section supporting-cta" aria-labelledby="skills-projects-title">
+    <div class="container supporting-cta__inner">
+      <div>
+        <h2 id="skills-projects-title">See the skills in context.</h2>
+        <p>Project case studies connect platform knowledge to business problems, implementation decisions, and testing.</p>
+      </div>
+      <ButtonLink href={projectsPath}>View projects</ButtonLink>
+    </div>
+  </section>
+</BaseLayout>

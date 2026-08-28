@@ -408,11 +408,33 @@ Project content below is approved for publication subject to the evidence bounda
 - **Screenshots or diagrams:** No verified public screenshots have been identified.
 - **Image alt text:** Not applicable unless screenshots are selected later.
 
+## Approved project visual strategy
+
+### Homepage and project index
+
+- Use a consistent set of generated project title-card graphics for all projects during Phase 6 polish rather than mixing real screenshots with missing-media states.
+- Treat generated title cards as supporting portfolio graphics, never as screenshots or evidence of the implemented solutions.
+- Keep the title-card system consistent with `design.md`: charcoal and muted olive, professional, recruiter-focused, clearly titled, visually distinct enough for scanning, and free of generic AI-art styling or excessive decoration.
+- Do not depict fake Salesforce interfaces, fake dashboards, invented architecture, metrics, outcomes, features, or implementation details.
+- Project-specific motifs may reference only concepts already verified in this document, such as automation, weather, Slack/contact relationships, or an application workflow.
+
+### Case-study evidence
+
+- Keep approved real screenshots and other evidence primarily on individual project case-study pages.
+- Case Intake and SLA Automation may continue to use `source-assets/images/case-sla-notification-email.png` as verified evidence.
+- Weather LWC may continue to use `source-assets/images/weather-lwc-search.png` as verified evidence.
+- Slack Contact Quick Action source code, screenshots, and internal implementation details remain private and unavailable for public use.
+- Job Application Tracker has no verified public screenshot; do not fabricate one to fill that evidence gap.
+- Generated title cards do not replace, alter, or elevate a project's evidence status.
+
 ## Deployment and metadata
 
 - **Production URL:** Placeholder
-- **Deployment host:** GitHub Pages
-- **GitHub Pages repository path or custom domain:** Use the portfolio repository path initially; no custom domain initially.
+- **Production hosting target:** Vercel Hobby
+- **Source repository visibility:** Private GitHub repository
+- **Production origin:** Configurable until the final Vercel URL is established
+- **Custom domain:** Not selected; configure one only if a later decision approves it
+- **Earlier GitHub Pages validation:** Builds using `/Portfolio-Website` were repository-subpath compatibility checks during completed phases, not the final deployment target
 - **Final site description:** Portfolio of Salesforce projects focused on automation, Apex, Lightning Web Components, integrations, and practical platform solutions.
 - **Social-sharing image:** `source-assets/images/jeremy-shull-salesforce-title-card.png`
 - **Social-sharing image alt text:** Jeremy Shull, Salesforce Developer & Administrator.

@@ -5,6 +5,7 @@ import { siteProfile } from '../data/site';
 import ButtonLink from './ButtonLink.astro';
 
 const resumePath = `${import.meta.env.BASE_URL}resume/Jeremy-Shull-Salesforce-Resume.pdf`;
+const projectsPath = `${import.meta.env.BASE_URL}projects/`;
 ---
 
 <section class="hero section" aria-labelledby="hero-title">
@@ -14,7 +15,7 @@ const resumePath = `${import.meta.env.BASE_URL}resume/Jeremy-Shull-Salesforce-Re
       <h1 id="hero-title">{siteProfile.headline}</h1>
       <p class="hero__lede">{siteProfile.introduction}</p>
       <div class="button-group" aria-label="Portfolio actions">
-        <ButtonLink href="#projects">View my projects</ButtonLink>
+        <ButtonLink href={projectsPath}>View my projects</ButtonLink>
         <ButtonLink href={resumePath} variant="secondary" download="Jeremy-Shull-Salesforce-Resume.pdf">
           Download my resume
         </ButtonLink>

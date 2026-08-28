@@ -67,24 +67,34 @@ Validation completed with a frozen-lockfile dependency check, strict Astro diagn
 
 ## Phase 5 — Supporting pages
 
-Status: awaiting approval.
+Status: complete — validated on 2026-08-28.
 
 - Build Skills, Certifications, About, Contact, and 404 routes.
 
-## Phase 6 — Quality, accessibility, security, and SEO review
+Validation completed with a frozen-lockfile dependency check, strict Astro diagnostics, the default static production build, and the GitHub Pages production build using `/Portfolio-Website`. Eleven pages are generated, including all five Phase 5 routes. Rendered browser review covered page titles, H1 structure, active navigation, approved About-image use, public contact targets, 404 indexing metadata, console output, and desktop horizontal overflow. Complete manual keyboard traversal, browser-native 200% zoom, operating-system reduced-motion verification, and physical-device testing remain pre-launch human checks.
 
-Status: awaiting approval.
+## Phase 6 — Visual polish, quality, accessibility, security, and SEO review
+
+Status: in progress.
 
 - Apply the Taste skill as a visual critique layer beneath the authoritative `design.md`.
+- Route the homepage's primary project CTA to the standalone project index while retaining the homepage project preview for recruiter scanning.
+- Complete restrained visual polish without changing the established charcoal, muted-olive, border-led system.
+- Install and implement Phosphor Icons selectively where they improve recognition, scanability, or action clarity. Keep icons secondary to visible text, provide accessible names for icon-only controls, use a consistent weight and sizing system, avoid decorative clutter, and minimize loaded icon assets and bundle impact.
+- Create and integrate a consistent generated project title-card system for homepage and project-index surfaces. Review every graphic for factual accuracy, recruiter-focused clarity, visual consistency, and an unmistakable distinction between supporting artwork and real project evidence. Keep approved screenshots primarily on case-study pages and preserve all documented evidence restrictions.
 - Validate accessibility, responsive behavior, content accuracy, mobile usability, image optimization, and performance.
 - Complete the pre-launch security review: scan the repository and generated `dist/`, audit dependencies, inspect client bundles for secrets or unintended data, verify that only intended public content is built, review external resources, confirm the expected static attack surface, and assess any later forms or user-controlled input.
 - Complete the pre-launch SEO review: verify unique titles, descriptions, canonical URLs, Open Graph and social-image handling, sitemap generation, `robots.txt`, semantic headings, crawlable internal links, published-content indexability, unpublished-content exclusion, verified structured data, broken links and 404 behavior, mobile usability, image optimization, and performance.
 
 ## Phase 7 — Deployment
 
-Status: awaiting deployment approval and production URL configuration.
+Status: awaiting Vercel deployment approval and final production URL configuration.
 
-- Add and review the GitHub Pages workflow with least-privilege permissions and deliberately controlled or pinned third-party actions where practical. Verify HTTPS, final public output, appropriate repository or branch protections and required checks, and custom-domain security only if a custom domain is adopted.
-- Configure the final production `site` origin and base path, then verify live canonical URLs, metadata, sitemap, `robots.txt`, and indexability against the actual deployed URL.
+- Connect the private GitHub source repository to Vercel Hobby through Vercel's Git integration, configure the Astro static production build, and review deployment access and project settings. Retain appropriate repository or branch protections and required checks.
+- Configure the final production `site` origin after Vercel establishes the public URL. Keep the site static; do not add backend or server functionality without a separately approved requirement.
+- Verify HTTPS and inspect the generated public output for intended routes, assets, and publication boundaries.
+- Verify live canonical URLs, page metadata, sitemap, `robots.txt`, and search-engine indexability against the actual deployed URL.
+- Review environment-variable handling if deployment values are introduced, and confirm that no secret or private value is exposed to client-side code or generated output.
+- Configure and validate a custom domain only if one is selected later.
 - If the owner chooses to use Google Search Console, connect and verify it, expose or submit the sitemap for discovery, and perform final search-engine indexability checks.
-- Finish deployment and operational documentation without claiming an unconfirmed production URL or custom domain.
+- Complete deployment and operational documentation without claiming an unconfirmed production URL or custom domain.

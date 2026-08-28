@@ -7,10 +7,11 @@ export const projectContexts = ['personal', 'training', 'volunteer', 'profession
 export type ProjectContext = (typeof projectContexts)[number];
 
 export const skillCategories = [
-  'Salesforce Platform',
-  'Development',
-  'Automation and Integration',
-  'Tools and Practices',
+  'Salesforce Platform and Administration',
+  'Salesforce Development',
+  'Integrations',
+  'Tools',
+  'Business and Operations',
 ] as const;
 
 export type SkillCategory = (typeof skillCategories)[number];

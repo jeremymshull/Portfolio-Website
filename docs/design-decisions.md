@@ -56,6 +56,24 @@ Approved project screenshots are imported once through `src/data/project-images.
 
 The repository's frontend design skill influenced the project-page hierarchy, content rhythm, card interaction, and preflight review. Its framework, dependency, image-generation, and motion requirements were not adopted where they conflict with `design.md`, the verified evidence boundaries, or the approved Astro phase scope.
 
+## 2026-08-28 — Phase 5 supporting pages
+
+Skills, Certifications, About, and Contact now use standalone routes while preserving the established primary navigation labels. Skill categories follow the verified headings in `docs/content-source.md`, and the homepage consumes the same centralized data. Certification pages continue to use the general Trailhead profile for verification rather than inventing credential-specific URLs.
+
+The standalone About page reuses the approved About photograph with its reviewed alt text and focal treatment. Its copy is deliberately limited to verified Salesforce focus, role targets, approved business skills, location, and work preferences. A deeper career-transition narrative remains tracked in `docs/content-needs.md` rather than being inferred.
+
+Contact uses the verified public email and professional-profile links without adding a form, third-party service, tracking, or new data-handling surface. The custom 404 page uses the shared layout and sets `noindex, follow` through a reusable layout option.
+
+The frontend design skill influenced headline length, page rhythm, list treatment, CTA review, and responsive collapse. Its additional image-generation, dual-theme, React, Tailwind, and animation guidance was not adopted where it conflicts with `design.md`, verified asset placement, or the approved Astro scope.
+
+## 2026-08-28 — Approved production, icon, and project-card direction
+
+Vercel Hobby is the approved production hosting target, connected to the private GitHub source repository. The final production URL and any custom-domain decision remain unresolved, so the production origin stays configurable. Earlier GitHub Pages builds using `/Portfolio-Website` remain valid historical repository-subpath compatibility checks; they are not the final deployment architecture. Phase 7 will use Vercel's Git integration rather than adding a GitHub Pages deployment workflow, while retaining appropriate repository and branch-protection review.
+
+Phosphor Icons is the approved icon family, with installation and selective implementation deferred to Phase 6. Icons will be used only when they improve recognition, scanability, or action clarity; they remain secondary to visible text and will not be added to every heading, card, or label. Icon-only controls require accessible names. Implementation will use a consistent weight and sizing system, follow the charcoal and muted-olive palette, avoid decorative clutter, and load only the assets or weights needed to minimize bundle impact. GitHub, LinkedIn, email, resume/download actions, project links, navigation affordances, and carefully selected skill-category treatments are candidates rather than required placements.
+
+Homepage and project-index cards will move in Phase 6 to a consistent family of generated project title-card graphics. These graphics are presentation and identity artwork, not screenshots or implementation evidence. They may use only verified project concepts from `docs/content-source.md` and must not depict fake Salesforce interfaces, dashboards, architecture, features, outcomes, or metrics. Approved real screenshots remain primarily on case-study pages: Case Intake and Weather retain their verified evidence, Slack retains its private-evidence restrictions, and Job Application Tracker retains its missing verified-screenshot status. This list-surface consistency decision narrows the general screenshot preference in `design.md` without changing the project's evidence standards or rewriting historical Phase 3–4 implementation notes.
+
 ## Deviations from the design system
 
-None through Phase 4. Supporting standalone pages remain deferred to their assigned phase.
+The deeper About themes suggested by `design.md` remain intentionally limited until factual source content is supplied. The approved hosting and project-list visual decisions above supersede `design.md` only where it still names GitHub Pages as deployment and generally prefers real screenshots on project cards; the rest of the visual and evidence system remains authoritative.

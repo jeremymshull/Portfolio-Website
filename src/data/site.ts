@@ -8,6 +8,8 @@ export const siteProfile = {
   location: 'Greater Indianapolis Area',
   availability:
     'Open to remote roles and opportunities across Greater Indianapolis and Central Indiana.',
+  relocation: 'Not seeking relocation.',
+  consulting: 'Open to freelance or consulting conversations.',
   email: 'jshull.salesforce@gmail.com',
   linkedin: 'https://www.linkedin.com/in/jeremymshull/',
   github: 'https://github.com/jeremymshull',

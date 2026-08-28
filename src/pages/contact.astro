@@ -1,0 +1,49 @@
+---
+import ButtonLink from '../components/ButtonLink.astro';
+import PageHero from '../components/PageHero.astro';
+import { siteProfile } from '../data/site';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact Jeremy Shull | Salesforce portfolio"
+  description="Contact Jeremy Shull about Salesforce roles, freelance work, consulting, or professional collaboration."
+>
+  <PageHero
+    eyebrow="Contact"
+    title="Start a Salesforce conversation."
+    description="Open to Salesforce roles and freelance or consulting conversations."
+  />
+
+  <section class="section section--surface" aria-labelledby="contact-email-title">
+    <div class="container contact-page__grid">
+      <div class="contact-page__primary">
+        <h2 id="contact-email-title">Email Jeremy</h2>
+        <p>Use the public email address below to start a conversation about a role, project, or collaboration.</p>
+        <p class="contact-page__email-address">{siteProfile.email}</p>
+        <ButtonLink href={`mailto:${siteProfile.email}`}>Send an email</ButtonLink>
+      </div>
+
+      <div class="contact-page__profiles">
+        <h2>Professional profiles</h2>
+        <ul>
+          <li><a href={siteProfile.linkedin} target="_blank" rel="noreferrer noopener">LinkedIn profile</a></li>
+          <li><a href={siteProfile.github} target="_blank" rel="noreferrer noopener">GitHub profile</a></li>
+          <li><a href={siteProfile.trailhead} target="_blank" rel="noreferrer noopener">Trailhead profile</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="contact-availability-title">
+    <div class="container contact-page__availability">
+      <h2 id="contact-availability-title">Current availability</h2>
+      <dl class="detail-list">
+        <div><dt>Location</dt><dd>{siteProfile.location}</dd></div>
+        <div><dt>Roles</dt><dd>{siteProfile.availability}</dd></div>
+        <div><dt>Relocation</dt><dd>{siteProfile.relocation}</dd></div>
+        <div><dt>Freelance and consulting</dt><dd>{siteProfile.consulting}</dd></div>
+      </dl>
+    </div>
+  </section>
+</BaseLayout>

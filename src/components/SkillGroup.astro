@@ -5,12 +5,14 @@ import TagList from './TagList.astro';
 interface Props {
   title: string;
   skills: readonly Skill[];
+  headingLevel?: 2 | 3;
 }
 
-const { title, skills } = Astro.props;
+const { title, skills, headingLevel = 3 } = Astro.props;
+const Heading = `h${headingLevel}` as 'h2' | 'h3';
 ---
 
 <article class="skill-group">
-  <h3>{title}</h3>
+  <Heading>{title}</Heading>
   <TagList items={skills.map((skill) => skill.name)} label={`${title} skills`} />
 </article>

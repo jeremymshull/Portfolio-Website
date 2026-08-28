@@ -1,14 +1,14 @@
 ---
 const homePath = import.meta.env.BASE_URL;
-const projectsPath = `${homePath}projects/`;
 const currentPath = Astro.url.pathname;
 const navigation = [
   { label: 'Home', href: homePath, current: currentPath === homePath },
-  { label: 'Projects', href: projectsPath, current: currentPath.startsWith(projectsPath) },
-  { label: 'Skills', href: `${homePath}#skills` },
-  { label: 'Certifications', href: `${homePath}#certifications` },
-  { label: 'About', href: `${homePath}#about` },
-  { label: 'Contact', href: `${homePath}#contact` },
+  ...['Projects', 'Skills', 'Certifications', 'About', 'Contact'].map((label) => {
+    const slug = label.toLowerCase();
+    const href = `${homePath}${slug}/`;
+
+    return { label, href, current: currentPath.startsWith(href) };
+  }),
 ];
 ---
 
