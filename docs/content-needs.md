@@ -4,7 +4,7 @@ These unresolved items are non-blocking for the completed homepage. `content-sou
 
 ## Project evidence
 
-- Select and verify any additional screenshots or diagrams before Phase 4 case-study use.
+- Select and verify any additional screenshots or diagrams before later case-study enrichment. Phase 4 uses explicit missing-media states where no approved public asset is available.
 - Keep the Slack Contact Quick Action source, screenshots, and internal implementation details private as documented in `content-source.md`.
 
 ## Existing images

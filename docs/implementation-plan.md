@@ -59,9 +59,11 @@ Before substantive Phase 4 expansion, run a read-only architecture-level securit
 
 ## Phase 4 — Project system
 
-Status: awaiting approval.
+Status: complete — validated on 2026-08-21.
 
 - Build the project index, reusable cards, dynamic case-study routes, and missing-media states.
+
+Validation completed with a frozen-lockfile dependency check, strict Astro diagnostics, the default static production build, and the GitHub Pages production build using `/Portfolio-Website`. The generated output contains the project index and exactly four published case-study routes. Rendered browser review covered project navigation, semantic structure, approved image loading, missing-media states, console output, and desktop horizontal overflow. Complete manual keyboard traversal, browser-native 200% zoom, operating-system reduced-motion verification, and physical-device testing remain pre-launch human checks.
 
 ## Phase 5 — Supporting pages
 

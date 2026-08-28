@@ -1,0 +1,124 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import ProjectDetailSection from '../../components/ProjectDetailSection.astro';
+import ProjectMedia from '../../components/ProjectMedia.astro';
+import TagList from '../../components/TagList.astro';
+import { getProjectImage } from '../../data/project-images';
+import { getPublishedProjects } from '../../data/projects';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getPublishedProjects();
+
+  return projects.map((project) => ({
+    params: { id: project.id },
+    props: { project },
+  }));
+}
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props as Props;
+const { data } = project;
+const contextLabels = {
+  personal: 'Personal project',
+  training: 'Training project',
+  volunteer: 'Volunteer project',
+  professional: 'Professional project',
+} as const;
+const media = data.media?.[0];
+const image = getProjectImage(media?.src);
+const repository = data.links?.find((link) => link.kind === 'repository');
+const demo = data.links?.find((link) => link.kind === 'demo');
+const projectsPath = `${import.meta.env.BASE_URL}projects/`;
+---
+
+<BaseLayout title={`${data.title} | Jeremy Shull`} description={data.summary!}>
+  <article class="case-study">
+    <header class="case-study__hero">
+      <div class="container case-study__hero-grid">
+        <div>
+          <a class="back-link" href={projectsPath}>Back to all projects</a>
+          <p class="eyebrow">{contextLabels[data.context!]}</p>
+          <h1>{data.title}</h1>
+          <p class="case-study__summary">{data.summary}</p>
+        </div>
+
+        <aside class="case-study__meta" aria-label="Project technologies">
+          <p class="case-study__meta-label">Technology</p>
+          <TagList items={data.technologies ?? []} label={`${data.title} technologies`} />
+          {(repository || demo) && (
+            <div class="case-study__links">
+              {repository && (
+                <a href={repository.url} target="_blank" rel="noreferrer noopener">{repository.label}</a>
+              )}
+              {demo && <a href={demo.url} target="_blank" rel="noreferrer noopener">{demo.label}</a>}
+            </div>
+          )}
+        </aside>
+      </div>
+    </header>
+
+    <div class="container case-study__media-wrap">
+      <ProjectMedia
+        image={image}
+        alt={media?.alt}
+        caption={media?.caption}
+        unavailableReason={data.mediaUnavailableReason}
+      />
+    </div>
+
+    <div class="container case-study__body">
+      <div class="case-study__overview">
+        <ProjectDetailSection title="Project context" id="project-context" text={data.contextDescription} />
+        <ProjectDetailSection title="Business problem" id="business-problem" text={data.businessProblem} />
+        {data.stakeholders && (
+          <ProjectDetailSection title="Users and stakeholders" id="stakeholders" items={data.stakeholders} />
+        )}
+        <ProjectDetailSection title="Solution" id="solution" text={data.solution} />
+      </div>
+
+      {data.impactNote && (
+        <aside class="case-study__evidence-note" aria-labelledby="impact-note-title">
+          <h2 id="impact-note-title">Attributed estimate</h2>
+          <p>{data.impactNote}</p>
+        </aside>
+      )}
+
+      {data.architecture && (
+        <ProjectDetailSection title="Architecture and process" id="architecture" items={data.architecture} ordered />
+      )}
+      {data.keyFeatures && (
+        <ProjectDetailSection title="Key features" id="key-features" items={data.keyFeatures} />
+      )}
+      {data.technicalDecisions && (
+        <ProjectDetailSection title="Technical decisions" id="technical-decisions" items={data.technicalDecisions} />
+      )}
+      {data.testing && (
+        <ProjectDetailSection title="Testing and validation" id="testing" items={data.testing} />
+      )}
+      {data.challenges && (
+        <ProjectDetailSection title="Challenges" id="challenges" items={data.challenges} />
+      )}
+      {data.lessonsLearned && (
+        <ProjectDetailSection title="Lessons learned" id="lessons-learned" items={data.lessonsLearned} />
+      )}
+      {data.futureImprovements && (
+        <ProjectDetailSection title="Future improvements" id="future-improvements" items={data.futureImprovements} />
+      )}
+
+      {data.evidenceNote && (
+        <aside class="case-study__evidence-note" aria-labelledby="evidence-note-title">
+          <h2 id="evidence-note-title">Public evidence boundary</h2>
+          <p>{data.evidenceNote}</p>
+        </aside>
+      )}
+
+      <nav class="case-study__closing" aria-label="Project navigation">
+        <a class="button-link button-link--secondary" href={projectsPath}>View all projects</a>
+      </nav>
+    </div>
+  </article>
+</BaseLayout>

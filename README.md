@@ -22,6 +22,8 @@ pnpm build
 
 Project entries live in `src/content/projects` and are validated by `src/content.config.ts`. New entries should remain `draft` until every published field is verified. Public project queries use `getPublishedProjects()` from `src/data/projects.ts` so draft content is excluded by default.
 
+Published projects appear at `/projects/` and receive static case-study routes at `/projects/<project-id>/`. Route generation uses the same published-only query. Approved project images are mapped centrally in `src/data/project-images.ts`; projects without approved public media display an explicit availability state.
+
 Verified skills and certifications live in `src/data/skills.ts` and `src/data/certifications.ts`. Homepage identity, contact, role, and availability content is centralized in `src/data/site.ts`. `docs/content-source.md` remains the factual source of truth for portfolio content.
 
 ## Deployment configuration

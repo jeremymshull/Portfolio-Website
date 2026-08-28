@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+  id: string;
+  items?: string[];
+  ordered?: boolean;
+  text?: string;
+}
+
+const { title, id, items, ordered = false, text } = Astro.props;
+const List = ordered ? 'ol' : 'ul';
+---
+
+<section class="case-study__section" aria-labelledby={id}>
+  <h2 id={id}>{title}</h2>
+  {text && <p>{text}</p>}
+  {items && (
+    <List class:list={['case-study__list', ordered && 'case-study__list--steps']}>
+      {items.map((item) => <li>{item}</li>)}
+    </List>
+  )}
+</section>

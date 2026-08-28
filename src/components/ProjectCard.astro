@@ -17,8 +17,8 @@ const contextLabels = {
   volunteer: 'Volunteer project',
   professional: 'Professional project',
 } as const;
-const repository = project.data.links?.find((link) => link.kind === 'repository');
 const media = project.data.media?.[0];
+const caseStudyHref = `${import.meta.env.BASE_URL}projects/${project.id}/`;
 ---
 
 <article class:list={['project-card', prominent && 'project-card--prominent']}>
@@ -38,18 +38,17 @@ const media = project.data.media?.[0];
 
   <div class="project-card__body">
     <p class="project-card__context">{contextLabels[project.data.context!]}</p>
-    <h3>{project.data.title}</h3>
+    <h3><a class="project-card__title-link" href={caseStudyHref}>{project.data.title}</a></h3>
     <p class="project-card__problem">
       <span>Business problem</span>
-      {project.data.businessProblem}
+      {project.data.cardProblem ?? project.data.businessProblem}
     </p>
-    <p class="project-card__solution">{project.data.solution}</p>
-    <TagList items={project.data.technologies ?? []} label={`${project.data.title} technologies`} />
+    <p class="project-card__solution">{project.data.cardSolution ?? project.data.solution}</p>
+    <TagList
+      items={project.data.cardTechnologies ?? project.data.technologies ?? []}
+      label={`${project.data.title} technologies`}
+    />
 
-    {repository && (
-      <a class="project-card__link" href={repository.url} target="_blank" rel="noreferrer noopener">
-        View repository<span class="visually-hidden"> for {project.data.title}</span>
-      </a>
-    )}
+    <span class="project-card__link" aria-hidden="true">View case study</span>
   </div>
 </article>

@@ -1,0 +1,45 @@
+---
+import ProjectCard from '../../components/ProjectCard.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import { getProjectImage } from '../../data/project-images';
+import { getPublishedProjects } from '../../data/projects';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const projects = await getPublishedProjects();
+---
+
+<BaseLayout
+  title="Salesforce project case studies | Jeremy Shull"
+  description="Salesforce project case studies focused on automation, Apex, Lightning Web Components, integrations, and practical platform solutions."
+>
+  <header class="page-hero">
+    <div class="container page-hero__inner">
+      <p class="eyebrow">Salesforce project work</p>
+      <h1>Case studies built around practical platform problems.</h1>
+      <p>
+        Explore the business problem, implementation approach, technical decisions, testing, and lessons behind each published project.
+      </p>
+    </div>
+  </header>
+
+  <section class="section section--surface" aria-labelledby="project-index-title">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Published case studies"
+        title="Project evidence, decisions, and lessons."
+        description="Each case study uses verified public project information and clearly marks evidence that is private or unavailable."
+        id="project-index-title"
+      />
+
+      <div class="project-grid">
+        {projects.map((project, index) => (
+          <ProjectCard
+            project={project}
+            image={getProjectImage(project.data.media?.[0]?.src)}
+            prominent={index === 0}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

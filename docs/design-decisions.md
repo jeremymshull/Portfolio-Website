@@ -46,6 +46,16 @@ Astro's local image pipeline requires `sharp` for production optimization, so Ph
 
 At desktop widths, the approved hero portrait now occupies the right side of the hero behind the content and transitions into the charcoal background through an image mask and layered CSS gradients. The portrait uses a contained, right-aligned crop so more of the original composition remains visible and the face does not become disproportionately large. The desktop frame background is transparent, preventing a vertical surface seam; the mask and gradients soften the actual image edge while preserving natural skin tones and maintaining readable contrast without altering the source photograph. Narrow layouts retain the separate framed portrait so the text and image do not compete for limited space. No animation or additional dependency was introduced.
 
+## 2026-08-21 — Phase 4 project system
+
+The project index and dynamic case-study route both use `getPublishedProjects()`. Static paths are generated only from that filtered result, so draft records do not receive public pages. Draft status remains a publication control rather than a confidentiality boundary.
+
+Verified project details remain in the Astro content collection and are rendered through reusable project-detail sections. Page-specific titles, descriptions, and canonical URLs use the existing shared layout metadata architecture. The project cards retain a clear case-study action and use one stretched title link so the full tile is clickable without nested interactive controls or an excessively long accessible link name.
+
+Approved project screenshots are imported once through `src/data/project-images.ts` and resolved from each content record's documented media path. Case Intake and Weather publish their approved screenshots with reviewed alt text. Slack uses a private-evidence state because its screenshot and implementation details are unavailable for public use; Job Application Tracker uses a missing-media state because no verified public screenshot has been identified. No substitute image, diagram, outcome, or project detail was invented.
+
+The repository's frontend design skill influenced the project-page hierarchy, content rhythm, card interaction, and preflight review. Its framework, dependency, image-generation, and motion requirements were not adopted where they conflict with `design.md`, the verified evidence boundaries, or the approved Astro phase scope.
+
 ## Deviations from the design system
 
-None for Phase 3. Later routes and richer case-study presentation remain intentionally deferred to their assigned phases.
+None through Phase 4. Supporting standalone pages remain deferred to their assigned phase.
