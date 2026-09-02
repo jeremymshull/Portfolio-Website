@@ -15,8 +15,8 @@ const projectsPath = `${import.meta.env.BASE_URL}projects/`;
       <h1 id="hero-title">{siteProfile.headline}</h1>
       <p class="hero__lede">{siteProfile.introduction}</p>
       <div class="button-group" aria-label="Portfolio actions">
-        <ButtonLink href={projectsPath}>View my projects</ButtonLink>
-        <ButtonLink href={resumePath} variant="secondary" download="Jeremy-Shull-Salesforce-Resume.pdf">
+        <ButtonLink href={projectsPath} icon="arrow-right">View my projects</ButtonLink>
+        <ButtonLink href={resumePath} variant="secondary" icon="download" download="Jeremy-Shull-Salesforce-Resume.pdf">
           Download my resume
         </ButtonLink>
       </div>

@@ -1,0 +1,40 @@
+---
+import arrowRight from '@phosphor-icons/core/regular/arrow-right.svg?url';
+import arrowSquareOut from '@phosphor-icons/core/regular/arrow-square-out.svg?url';
+import briefcase from '@phosphor-icons/core/regular/briefcase.svg?url';
+import code from '@phosphor-icons/core/regular/code.svg?url';
+import database from '@phosphor-icons/core/regular/database.svg?url';
+import downloadSimple from '@phosphor-icons/core/regular/download-simple.svg?url';
+import envelopeSimple from '@phosphor-icons/core/regular/envelope-simple.svg?url';
+import githubLogo from '@phosphor-icons/core/regular/github-logo.svg?url';
+import linkedinLogo from '@phosphor-icons/core/regular/linkedin-logo.svg?url';
+import plugsConnected from '@phosphor-icons/core/regular/plugs-connected.svg?url';
+import toolbox from '@phosphor-icons/core/regular/toolbox.svg?url';
+
+const icons = {
+  'arrow-right': arrowRight,
+  'arrow-square-out': arrowSquareOut,
+  briefcase,
+  code,
+  database,
+  download: downloadSimple,
+  email: envelopeSimple,
+  github: githubLogo,
+  linkedin: linkedinLogo,
+  integrations: plugsConnected,
+  toolbox,
+} as const;
+
+interface Props {
+  name: keyof typeof icons;
+  size?: 'small' | 'medium';
+}
+
+const { name, size = 'medium' } = Astro.props;
+---
+
+<span
+  class:list={['icon', `icon--${size}`]}
+  style={`--icon-source: url("${icons[name]}")`}
+  aria-hidden="true"
+></span>

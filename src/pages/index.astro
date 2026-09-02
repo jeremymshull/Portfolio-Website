@@ -9,7 +9,7 @@ import SectionHeading from '../components/SectionHeading.astro';
 import SkillGroup from '../components/SkillGroup.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getPublishedCertifications } from '../data/certifications';
-import { getProjectImage } from '../data/project-images';
+import { getProjectTitleCard } from '../data/project-title-cards';
 import { getPublishedProjects } from '../data/projects';
 import { getPublishedSkills } from '../data/skills';
 import { siteProfile } from '../data/site';
@@ -39,7 +39,7 @@ const certifications = getPublishedCertifications();
         {projects.map((project, index) => (
           <ProjectCard
             project={project}
-            image={getProjectImage(project.data.media?.[0]?.src)}
+            titleCard={getProjectTitleCard(project.id)}
             prominent={index === 0}
           />
         ))}
@@ -124,8 +124,8 @@ const certifications = getPublishedCertifications();
 
       <div class="contact-cta__actions">
         <div class="button-group">
-          <ButtonLink href={`mailto:${siteProfile.email}`}>Email Jeremy</ButtonLink>
-          <ButtonLink href={siteProfile.linkedin} variant="secondary" external>Connect on LinkedIn</ButtonLink>
+          <ButtonLink href={`mailto:${siteProfile.email}`} icon="email">Email Jeremy</ButtonLink>
+          <ButtonLink href={siteProfile.linkedin} variant="secondary" icon="linkedin" external>Connect on LinkedIn</ButtonLink>
         </div>
         <div class="contact-links" aria-label="Professional profiles">
           <a href={siteProfile.github} target="_blank" rel="noreferrer noopener">GitHub profile</a>

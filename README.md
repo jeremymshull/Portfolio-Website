@@ -22,9 +22,11 @@ pnpm build
 
 Project entries live in `src/content/projects` and are validated by `src/content.config.ts`. New entries should remain `draft` until every published field is verified. Public project queries use `getPublishedProjects()` from `src/data/projects.ts` so draft content is excluded by default.
 
-Published projects appear at `/projects/` and receive static case-study routes at `/projects/<project-id>/`. Route generation uses the same published-only query. Approved project images are mapped centrally in `src/data/project-images.ts`. The current pre-Phase-6 list surfaces use approved screenshots or explicit availability states; Phase 6 will replace those list visuals with consistent generated project title cards while keeping approved real evidence primarily on case-study pages.
+Published projects appear at `/projects/` and receive static case-study routes at `/projects/<project-id>/`. Route generation uses the same published-only query. Generated list-surface artwork is mapped centrally in `src/data/project-title-cards.ts` and identified in its descriptive alt text as generated title artwork rather than a project screenshot. Approved real project images remain mapped in `src/data/project-images.ts` and are used primarily on case-study pages.
 
 Standalone supporting routes are available at `/skills/`, `/certifications/`, `/about/`, and `/contact/`. The custom `404.html` page is generated with `noindex, follow` metadata.
+
+When `SITE_URL` is configured, the build emits canonical URLs, Open Graph and Twitter image metadata, verified Person structured data, a sitemap, and a sitemap reference in `robots.txt`. Without a confirmed origin, these absolute-URL features remain intentionally conditional.
 
 Verified skills and certifications live in `src/data/skills.ts` and `src/data/certifications.ts`. Homepage identity, contact, role, and availability content is centralized in `src/data/site.ts`. `docs/content-source.md` remains the factual source of truth for portfolio content.
 

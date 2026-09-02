@@ -1,18 +1,29 @@
 ---
-import type { Skill } from '../types/content';
+import type { Skill, SkillCategory } from '../types/content';
+import Icon from './Icon.astro';
 import TagList from './TagList.astro';
 
 interface Props {
-  title: string;
+  title: SkillCategory;
   skills: readonly Skill[];
   headingLevel?: 2 | 3;
 }
 
 const { title, skills, headingLevel = 3 } = Astro.props;
 const Heading = `h${headingLevel}` as 'h2' | 'h3';
+const categoryIcons = {
+  'Salesforce Platform and Administration': 'database',
+  'Salesforce Development': 'code',
+  Integrations: 'integrations',
+  Tools: 'toolbox',
+  'Business and Operations': 'briefcase',
+} as const;
 ---
 
 <article class="skill-group">
-  <Heading>{title}</Heading>
+  <div class="skill-group__identity">
+    <span class="skill-group__icon"><Icon name={categoryIcons[title]} /></span>
+    <Heading>{title}</Heading>
+  </div>
   <TagList items={skills.map((skill) => skill.name)} label={`${title} skills`} />
 </article>

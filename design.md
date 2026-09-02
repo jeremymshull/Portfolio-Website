@@ -4,7 +4,7 @@ name: Jeremy Shull Salesforce Portfolio
 description: Recruiter-focused visual and interaction system for a professional Salesforce portfolio built with Astro.
 status: production-ready
 framework: Astro
-deployment: GitHub Pages
+deployment: Vercel Hobby
 
 brand:
   personality:

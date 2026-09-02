@@ -20,3 +20,11 @@
 - Astro's responsive local-image generation requires `sharp` during production builds; browser development alone does not expose that missing dependency.
 - A fixed-height grid media panel must drop its mobile aspect ratio at the wide prominent-card breakpoint, or a wide screenshot can overflow its assigned column and reduce adjacent text contrast.
 - Keeping original photographs in `source-assets` while importing them through Astro preserves the source files and produces optimized public derivatives. The resume follows the same preservation principle: the approved source remains intact and a public download copy uses the approved filename.
+
+## 2026-08-30
+
+- Generated list-surface artwork can improve project-family consistency without weakening evidence standards when it avoids fake interfaces and metrics, uses only verified concepts, and is visibly labeled as artwork rather than evidence.
+- Retaining generated PNG sources separately from cropped WebP working assets preserves provenance while letting Astro produce small responsive derivatives for the public build.
+- Importing individual Phosphor SVG assets and rendering them as CSS masks provides a consistent icon system without an icon font, framework component, or client-side runtime.
+- SEO features that require an absolute origin should be conditional until deployment: local builds remain valid, while configured builds can emit canonicals, social-image URLs, structured data, sitemaps, and sitemap-aware `robots.txt` output.
+- pnpm 11 reads dependency overrides from `pnpm-workspace.yaml`; placing them under the legacy `package.json` `pnpm` field is ignored.

@@ -1,5 +1,6 @@
 ---
 import ButtonLink from '../components/ButtonLink.astro';
+import Icon from '../components/Icon.astro';
 import PageHero from '../components/PageHero.astro';
 import { siteProfile } from '../data/site';
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -21,15 +22,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <h2 id="contact-email-title">Email Jeremy</h2>
         <p>Use the public email address below to start a conversation about a role, project, or collaboration.</p>
         <p class="contact-page__email-address">{siteProfile.email}</p>
-        <ButtonLink href={`mailto:${siteProfile.email}`}>Send an email</ButtonLink>
+        <ButtonLink href={`mailto:${siteProfile.email}`} icon="email">Send an email</ButtonLink>
       </div>
 
       <div class="contact-page__profiles">
         <h2>Professional profiles</h2>
         <ul>
-          <li><a href={siteProfile.linkedin} target="_blank" rel="noreferrer noopener">LinkedIn profile</a></li>
-          <li><a href={siteProfile.github} target="_blank" rel="noreferrer noopener">GitHub profile</a></li>
-          <li><a href={siteProfile.trailhead} target="_blank" rel="noreferrer noopener">Trailhead profile</a></li>
+          <li><a href={siteProfile.linkedin} target="_blank" rel="noreferrer noopener"><span><Icon name="linkedin" size="small" /> LinkedIn profile</span><Icon name="arrow-square-out" size="small" /></a></li>
+          <li><a href={siteProfile.github} target="_blank" rel="noreferrer noopener"><span><Icon name="github" size="small" /> GitHub profile</span><Icon name="arrow-square-out" size="small" /></a></li>
+          <li><a href={siteProfile.trailhead} target="_blank" rel="noreferrer noopener"><span>Trailhead profile</span><Icon name="arrow-square-out" size="small" /></a></li>
         </ul>
       </div>
     </div>

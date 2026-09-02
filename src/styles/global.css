@@ -109,6 +109,26 @@ a:hover {
   color: var(--color-text);
 }
 
+.icon {
+  display: inline-block;
+  width: 1.125rem;
+  flex: 0 0 auto;
+  aspect-ratio: 1;
+  background: currentColor;
+  -webkit-mask: var(--icon-source) center / contain no-repeat;
+  mask: var(--icon-source) center / contain no-repeat;
+}
+
+.icon--small {
+  width: 1rem;
+}
+
+.link-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
 :focus-visible {
   outline: 3px solid var(--color-focus);
   outline-offset: 4px;
@@ -352,6 +372,7 @@ a:hover {
   min-height: 2.75rem;
   align-items: center;
   justify-content: center;
+  gap: var(--space-2);
   padding: 0.7rem var(--space-6);
   border: 1px solid transparent;
   border-radius: var(--radius-small);
@@ -421,29 +442,27 @@ a:hover {
 }
 
 .project-card__media {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: stretch;
   min-width: 0;
-  aspect-ratio: 16 / 9;
   border: 0;
   border-bottom: 1px solid var(--color-border);
   border-radius: var(--radius-medium) var(--radius-medium) 0 0;
 }
 
 .project-card__media img {
+  height: auto;
   max-width: 100%;
-  object-position: center top;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  object-position: center;
   transition: scale var(--duration-slow) var(--ease-standard);
 }
 
 .project-card:hover .project-card__media img {
   scale: 1.02;
-}
-
-.project-card__media figcaption {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
 }
 
 .project-card__body {
@@ -534,6 +553,7 @@ a:hover {
   display: inline-flex;
   min-height: 2.75rem;
   align-items: center;
+  gap: var(--space-2);
   align-self: flex-start;
   margin-top: auto;
   color: var(--color-accent-light);
@@ -805,30 +825,71 @@ a:hover {
   color: var(--color-text-secondary);
 }
 
-.skills-grid,
+.skills-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
 .certification-grid {
   display: grid;
   border-top: 1px solid var(--color-border);
 }
 
-.skill-group,
+.skill-group {
+  display: grid;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius-medium);
+  background: var(--color-background);
+}
+
+.skill-group__identity {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.skill-group__icon {
+  display: inline-flex;
+  width: 3.25rem;
+  height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: var(--color-surface-elevated);
+  color: var(--color-accent-light);
+}
+
+.skill-group__icon .icon {
+  width: 1.75rem;
+}
+
 .certification-card {
   padding: var(--space-8) 0;
   border-bottom: 1px solid var(--color-border);
 }
 
-.skill-group h3,
+.skill-group h2,
+.skill-group h3 {
+  margin: 0;
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  line-height: 1.25;
+}
+
 .certification-card h3 {
   font-size: clamp(1.25rem, 2vw, 1.625rem);
 }
 
-.skill-group h2,
 .certification-card h2 {
   font-size: clamp(1.5rem, 2.5vw, 2rem);
 }
 
 .skill-group .tag-list {
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .certifications-layout {
@@ -922,13 +983,16 @@ a:hover {
   align-items: center;
 }
 
-.skill-directory,
+.skill-directory {
+  display: grid;
+  gap: var(--space-4);
+}
+
 .credential-list {
   display: grid;
   border-top: 1px solid var(--color-border);
 }
 
-.skill-directory .skill-group,
 .credential-list .certification-card {
   padding-inline: 0;
 }
@@ -1114,33 +1178,11 @@ a:hover {
     align-items: center;
   }
 
-  .skills-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .skill-directory {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .skill-directory .skill-group {
-    padding-inline: var(--space-8);
-    border-right: 1px solid var(--color-border);
-  }
-
-  .skill-directory .skill-group:nth-child(odd) {
-    padding-left: 0;
-  }
-
-  .skill-directory .skill-group:nth-child(even) {
-    padding-right: 0;
-    border-right: 0;
-  }
-
-  .skill-directory .skill-group:last-child:nth-child(odd),
-  .skills-grid .skill-group:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    padding-right: 0;
-    border-right: 0;
+  .skill-group {
+    grid-template-columns: minmax(14rem, 0.42fr) minmax(0, 1fr);
+    gap: var(--space-8);
+    align-items: center;
+    padding: var(--space-6) var(--space-8);
   }
 
   .credential-list {
@@ -1175,20 +1217,6 @@ a:hover {
   .contact-page__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-16);
-  }
-
-  .skill-group {
-    padding: var(--space-8);
-    border-right: 1px solid var(--color-border);
-  }
-
-  .skill-group:nth-child(odd) {
-    padding-left: 0;
-  }
-
-  .skill-group:nth-child(even) {
-    padding-right: 0;
-    border-right: 0;
   }
 
   .certifications-layout {
@@ -1314,6 +1342,13 @@ a:hover {
     border-right: 1px solid var(--color-border);
     border-bottom: 0;
     border-radius: var(--radius-medium) 0 0 var(--radius-medium);
+  }
+
+  .project-card--case-intake .project-card__media img {
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+    object-position: 60% center;
   }
 }
 

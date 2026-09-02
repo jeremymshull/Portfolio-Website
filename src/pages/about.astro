@@ -43,8 +43,8 @@ const resumePath = `${import.meta.env.BASE_URL}resume/Jeremy-Shull-Salesforce-Re
         <h3>Role focus</h3>
         <p>{siteProfile.targetRoles}</p>
         <div class="button-group">
-          <ButtonLink href={contactPath}>Contact Jeremy</ButtonLink>
-          <ButtonLink href={resumePath} variant="secondary" download="Jeremy-Shull-Salesforce-Resume.pdf">
+          <ButtonLink href={contactPath} icon="email">Contact Jeremy</ButtonLink>
+          <ButtonLink href={resumePath} variant="secondary" icon="download" download="Jeremy-Shull-Salesforce-Resume.pdf">
             Download resume
           </ButtonLink>
         </div>

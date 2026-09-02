@@ -1,7 +1,7 @@
 ---
 import ProjectCard from '../../components/ProjectCard.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
-import { getProjectImage } from '../../data/project-images';
+import { getProjectTitleCard } from '../../data/project-title-cards';
 import { getPublishedProjects } from '../../data/projects';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
@@ -35,7 +35,7 @@ const projects = await getPublishedProjects();
         {projects.map((project, index) => (
           <ProjectCard
             project={project}
-            image={getProjectImage(project.data.media?.[0]?.src)}
+            titleCard={getProjectTitleCard(project.id)}
             prominent={index === 0}
           />
         ))}

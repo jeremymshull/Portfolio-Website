@@ -75,16 +75,18 @@ Validation completed with a frozen-lockfile dependency check, strict Astro diagn
 
 ## Phase 6 — Visual polish, quality, accessibility, security, and SEO review
 
-Status: in progress.
+Status: complete — validated on 2026-08-30.
 
 - Apply the Taste skill as a visual critique layer beneath the authoritative `design.md`.
-- Route the homepage's primary project CTA to the standalone project index while retaining the homepage project preview for recruiter scanning.
+- Complete: the homepage's primary project CTA routes to the standalone project index while retaining the homepage project preview for recruiter scanning.
 - Complete restrained visual polish without changing the established charcoal, muted-olive, border-led system.
 - Install and implement Phosphor Icons selectively where they improve recognition, scanability, or action clarity. Keep icons secondary to visible text, provide accessible names for icon-only controls, use a consistent weight and sizing system, avoid decorative clutter, and minimize loaded icon assets and bundle impact.
 - Create and integrate a consistent generated project title-card system for homepage and project-index surfaces. Review every graphic for factual accuracy, recruiter-focused clarity, visual consistency, and an unmistakable distinction between supporting artwork and real project evidence. Keep approved screenshots primarily on case-study pages and preserve all documented evidence restrictions.
 - Validate accessibility, responsive behavior, content accuracy, mobile usability, image optimization, and performance.
 - Complete the pre-launch security review: scan the repository and generated `dist/`, audit dependencies, inspect client bundles for secrets or unintended data, verify that only intended public content is built, review external resources, confirm the expected static attack surface, and assess any later forms or user-controlled input.
 - Complete the pre-launch SEO review: verify unique titles, descriptions, canonical URLs, Open Graph and social-image handling, sitemap generation, `robots.txt`, semantic headings, crawlable internal links, published-content indexability, unpublished-content exclusion, verified structured data, broken links and 404 behavior, mobile usability, image optimization, and performance.
+
+Validation completed with a frozen-lockfile dependency check, strict Astro diagnostics, the default static production build, a configured-root production build, and the repository-subpath compatibility build. The production dependency audit reports no known vulnerabilities. Rendered production-preview review covered all eleven HTML routes plus desktop, tablet, and narrow-mobile layouts; metadata, sitemap, `robots.txt`, internal links, generated image output, source and output security scans, and public route boundaries were also inspected. Full manual keyboard traversal, browser-native 200% zoom, operating-system reduced-motion verification, physical-device testing, and final live-origin checks remain pre-launch or Phase 7 human checks.
 
 ## Phase 7 — Deployment
 

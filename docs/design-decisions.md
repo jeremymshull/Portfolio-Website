@@ -77,3 +77,21 @@ Homepage and project-index cards will move in Phase 6 to a consistent family of 
 ## Deviations from the design system
 
 The deeper About themes suggested by `design.md` remain intentionally limited until factual source content is supplied. The approved hosting and project-list visual decisions above supersede `design.md` only where it still names GitHub Pages as deployment and generally prefers real screenshots on project cards; the rest of the visual and evidence system remains authoritative.
+
+## 2026-08-30 — Phase 6 visual and quality system
+
+Four project-specific title cards were generated as a coordinated charcoal, muted-olive, border-led family using only verified project concepts. The full generated PNGs are retained under `source-assets/generated/project-title-cards/`; cropped 16:9 WebP working assets under `src/assets/project-title-cards/` feed Astro's responsive image pipeline. Each list-surface image identifies itself in descriptive alt text as generated title artwork rather than a project screenshot; the portfolio owner approved omitting a visible disclosure caption because the artwork is visually distinct from screenshot evidence. Approved real screenshots and the documented private or missing-evidence states remain unchanged on case-study pages.
+
+Phosphor Icons is implemented through eleven individually imported regular-weight SVG assets from `@phosphor-icons/core`. The reusable icon component renders them as CSS masks, so icons inherit text color and add no client-side icon runtime or icon font. Icons supplement visible action labels for project, download, email, external-link, GitHub, and LinkedIn affordances, and provide a consistent visual marker for each verified skill category. They are decorative to assistive technology because adjacent text retains the accessible name.
+
+The homepage and standalone skills directory now share one compact capability-row treatment inspired by the portfolio owner's supplied reference. Each row pairs a sentence-case category heading with a restrained icon and the repository's existing verified skill tags. The implementation preserves the charcoal, muted-olive, border-led system, avoids the reference's glow treatment, and does not copy any unverified technologies from the reference image.
+
+The approved Salesforce title-card asset is now the shared social image. Astro creates a 1200×630 WebP derivative, and absolute Open Graph and Twitter image URLs are emitted only when `SITE_URL` is configured. Canonical URLs, verified Person JSON-LD, sitemap generation, and the sitemap entry in `robots.txt` follow the same origin-aware rule. This avoids inventing a production URL before Phase 7.
+
+The frontend design and image-to-code skills influenced the visual preflight, title-card consistency, card hierarchy, and responsive critique. Their React, Tailwind, GSAP, dual-theme, randomized-layout, and image-first rebuild defaults were not adopted where they conflict with `design.md`, the established Astro architecture, restrained motion, or verified evidence boundaries.
+
+The production dependency audit identified a transitive `nanoid` version below the patched 3.3.18 release through Astro's PostCSS build chain. A narrow pnpm workspace override pins `nanoid` 3.3.18 without adding it as a direct application dependency; the follow-up production audit reports no known vulnerabilities.
+
+## 2026-09-02 - Case Intake title-card crop
+
+The wide featured Case Intake and SLA Automation card uses a project-specific `object-fit: cover` crop with `object-position: 60% center`. This removes the unused lower portion of its fixed media column while retaining the document, SLA clock, routing, assignee, and notification motifs. The source image, card dimensions, shared title-card behavior, and all other project crops remain unchanged.

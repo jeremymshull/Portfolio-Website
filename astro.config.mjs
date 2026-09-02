@@ -1,3 +1,4 @@
+import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 
 const site = process.env.SITE_URL;
@@ -9,4 +10,9 @@ export default defineConfig({
   base,
   output: 'static',
   trailingSlash: 'always',
+  integrations: [
+    site && sitemap({
+      filter: (page) => !page.endsWith('/404/') && !page.endsWith('/404.html'),
+    }),
+  ],
 });

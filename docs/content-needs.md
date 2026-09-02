@@ -20,4 +20,3 @@ These unresolved items are non-blocking for the completed homepage. `content-sou
 
 - Record the final Vercel production URL after deployment.
 - Confirm whether a custom domain will be selected later; none is currently approved.
-- Confirm whether the approved title-card asset should be published as the social-sharing image during the metadata quality pass.
