@@ -1,9 +1,8 @@
 ---
-import ButtonLink from '../components/ButtonLink.astro';
+import Falling404Game from '../components/Falling404Game.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const homePath = import.meta.env.BASE_URL;
-const projectsPath = `${homePath}projects/`;
 ---
 
 <BaseLayout
@@ -11,15 +10,5 @@ const projectsPath = `${homePath}projects/`;
   description="The requested page could not be found in Jeremy Shull's Salesforce portfolio."
   noIndex
 >
-  <section class="not-found" aria-labelledby="not-found-title">
-    <div class="container not-found__inner">
-      <p class="eyebrow">Error 404</p>
-      <h1 id="not-found-title">This page could not be found.</h1>
-      <p>The address may be incorrect, or the page may have moved.</p>
-      <div class="button-group">
-        <ButtonLink href={homePath}>Return home</ButtonLink>
-        <ButtonLink href={projectsPath} variant="secondary">View projects</ButtonLink>
-      </div>
-    </div>
-  </section>
+  <Falling404Game homePath={homePath} />
 </BaseLayout>
