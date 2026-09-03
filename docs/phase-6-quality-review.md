@@ -18,6 +18,8 @@ Reviewed on 2026-08-30. This review covers the static application and generated 
 - Generated title-card WebP sources are approximately 25–31 KB before Astro's responsive derivatives. The configured 1200×630 social image derivative is approximately 17 KB in the validation build.
 - Fonts remain self-hosted. No third-party runtime font, analytics, tracking, form, or animation-library request was added.
 
+Post-review note, 2026-09-03: the later approved interactive 404 enhancement adds one approximately 4.6 KB minified client bundle containing the falling-letter game and global Konami listener. It adds no dependency, external request, analytics, storage, or server-side behavior; the original Phase 6 measurements above remain the historical review result.
+
 ## Security
 
 - Repository and generated-output scans found no private keys, provider tokens, API keys, client secrets, or password assignments.

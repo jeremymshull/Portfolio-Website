@@ -37,4 +37,6 @@ Vercel Hobby is the chosen production hosting target, connected to the private G
 - `SITE_URL`: the final Vercel production origin when confirmed.
 - `BASE_PATH`: `/` for the planned Vercel deployment. `/Portfolio-Website` remains available only for the repository-subpath compatibility builds used during earlier validation.
 
+Static Astro deployment uses Vercel's zero-configuration framework support; no Vercel adapter or server runtime is required. See [docs/deployment.md](docs/deployment.md) for the build settings, source-control gate, first-deployment steps, and post-deployment validation checklist.
+
 See [docs/implementation-plan.md](docs/implementation-plan.md) for the phased roadmap and [docs/content-needs.md](docs/content-needs.md) for verified content still required.

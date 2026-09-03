@@ -90,7 +90,7 @@ Validation completed with a frozen-lockfile dependency check, strict Astro diagn
 
 ## Phase 7 — Deployment
 
-Status: awaiting Vercel deployment approval and final production URL configuration.
+Status: in progress — repository-side preparation completed on 2026-09-03; awaiting the first Vercel deployment and final production URL configuration.
 
 - Connect the private GitHub source repository to Vercel Hobby through Vercel's Git integration, configure the Astro static production build, and review deployment access and project settings. Retain appropriate repository or branch protections and required checks.
 - Configure the final production `site` origin after Vercel establishes the public URL. Keep the site static; do not add backend or server functionality without a separately approved requirement.
