@@ -95,3 +95,9 @@ The production dependency audit identified a transitive `nanoid` version below t
 ## 2026-09-02 - Case Intake title-card crop
 
 The wide featured Case Intake and SLA Automation card uses a project-specific `object-fit: cover` crop with `object-position: 60% center`. This removes the unused lower portion of its fixed media column while retaining the document, SLA clock, routing, assignee, and notification motifs. The source image, card dimensions, shared title-card behavior, and all other project crops remain unchanged.
+
+## 2026-09-02 - Interactive 404 Easter egg
+
+The static 404 route now contains a small falling-letter catcher game built from the actual visible characters in its heading. The feature is deliberately isolated in one Astro component and uses deterministic CSS transforms plus minimal vanilla TypeScript, without a game engine, added dependency, stored score, audio, lives, or levels. The established charcoal, muted-olive, border-led visual system remains intact, and an always-visible Return home action keeps recovery from the error page obvious.
+
+The game starts after a brief pause for visitors who allow motion. Keyboard input supports Left and Right Arrow keys plus A and D; pointer users can drag the catcher or use visible mobile controls. Reduced-motion visitors receive the complete static 404 message and no automatic gameplay. A shared, field-safe Konami listener routes the standard sequence to an intentionally missing path so the same custom 404 implementation is used while retaining missing-page behavior. This scoped playful motion is an explicit exception to the site's generally restrained animation direction and remains confined to the opt-out-compatible error experience.

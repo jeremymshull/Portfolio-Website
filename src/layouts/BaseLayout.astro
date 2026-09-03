@@ -4,6 +4,7 @@ import '@fontsource-variable/inter';
 import '@fontsource-variable/jetbrains-mono';
 import '@fontsource-variable/syne';
 import socialShareSource from '../../source-assets/images/jeremy-shull-salesforce-title-card.png';
+import KonamiListener from '../components/KonamiListener.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import { siteProfile } from '../data/site';
@@ -74,5 +75,6 @@ const structuredData = Astro.site
     <SiteHeader />
     <main id="main-content"><slot /></main>
     <SiteFooter />
+    <KonamiListener />
   </body>
 </html>
