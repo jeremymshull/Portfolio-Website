@@ -975,8 +975,8 @@ Priority order:
 
 1. factual project documentation;
 2. this `design.md`;
-3. repository-level instructions such as `AGENTS.md`;
-4. relevant installed or repository-local `SKILL.md` files;
+3. local development instructions when present;
+4. relevant locally installed design-review guidance;
 5. individual implementation prompts;
 6. generic design or coding suggestions.
 

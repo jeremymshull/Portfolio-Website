@@ -1,12 +1,13 @@
 # Vercel deployment runbook
 
-Status: repository preparation complete; first Vercel deployment and final production URL are pending.
+Status: deployed to Vercel Hobby at `https://www.jeremymshull.com`; production-origin configuration, dependency remediation, and automated live checks completed on 2026-09-14. Remaining dashboard and manual checks are listed below.
 
-Do not record or configure a production origin until Vercel has assigned the real public production URL. No custom domain or Google Search Console configuration is approved.
+The confirmed public production origin is `https://www.jeremymshull.com`. Google Search Console remains unapproved and unconfigured.
 
 ## Production architecture
 
-- Hosting: Vercel Hobby connected to the private GitHub repository through Vercel's Git integration.
+- Hosting: Vercel Hobby.
+- Source repository: public `jeremymshull/Portfolio-Website`, intentionally visible for portfolio transparency; secrets and local environment files remain excluded from source control.
 - Production branch: `main`.
 - Framework: Astro, statically generated.
 - Repository root: project root (`.`).
@@ -16,6 +17,7 @@ Do not record or configure a production origin until Vercel has assigned the rea
 - Node.js: version 24, matching repository validation and satisfying the declared `>=22.12.0` requirement.
 - Package manager: the `pnpm@11.9.0` version declared in `package.json`.
 - Production base path: `/`.
+- Production origin: `https://www.jeremymshull.com`.
 
 Vercel supports static Astro sites without an adapter or a `vercel.json` file. This project does not use Vercel Functions, server-side rendering, Web Analytics, Speed Insights, cookies, or third-party forms.
 
@@ -23,11 +25,13 @@ Vercel supports static Astro sites without an adapter or a `vercel.json` file. T
 
 The `Build` GitHub Actions job, displayed under the `Validate` workflow, runs for pull requests and pushes to `main`. It installs from the frozen lockfile, runs Astro diagnostics, and builds the static site. After the workflow has run at least once, configure the `main` branch ruleset to require the `Build` status check before merging.
 
+Verified on 2026-09-14: the active `Protect main` ruleset applies to the default branch, requires pull requests, blocks deletion and non-fast-forward updates, and requires the `Build` status check.
+
 The first deployment must use a `main` commit containing the approved interactive 404 work and this Phase 7 preparation. Do not select a feature branch as Vercel's Production Branch.
 
 ## First deployment settings
 
-Use Vercel's dashboard to import the private `jeremymshull/Portfolio-Website` repository. Limit the Vercel GitHub App's repository access to this repository if practical.
+Use Vercel's dashboard to import the public `jeremymshull/Portfolio-Website` repository. Limit the Vercel GitHub App's repository access to this repository if practical.
 
 Confirm these settings before selecting Deploy:
 
@@ -45,25 +49,24 @@ Do not create `SITE_URL` for the first deployment because the production URL is 
 
 Keep Web Analytics and Speed Insights disabled because analytics and tracking have not been approved. Under Deployment Protection, use Vercel Authentication with Standard Protection for preview and generated deployment URLs while leaving the production domain publicly accessible.
 
-## Information required after the first deployment
+## First deployment record
 
-Record and return:
+Confirmed on 2026-09-14:
 
-1. The stable public production URL shown under the project's Domains section, including `https://` and without a path.
-2. Confirmation that the deployment source is the current `main` commit.
-3. Confirmation that Astro was detected and the build completed successfully.
-4. Any Vercel build warning or error shown in the deployment log.
+1. The stable public production URL is `https://www.jeremymshull.com`.
+2. The live site returns the expected Astro-generated routes and assets.
+3. Production pages emit canonicals, social metadata, and structured data against the confirmed origin, demonstrating that the production `SITE_URL` configuration and redeploy took effect.
 
-Do not provide a commit-specific preview URL as the production origin.
+The exact deployment source commit, Vercel framework-detection record, and build-log warnings have not been independently verified in the Vercel dashboard.
 
 ## Final-origin configuration
 
-After the real URL is confirmed:
+Completed for the confirmed origin:
 
-1. Add `SITE_URL` to the Vercel Production environment using the exact HTTPS origin without a trailing slash.
-2. Set `BASE_PATH` to `/` in Production if it is not already explicit.
-3. Redeploy the current `main` commit so Astro emits production canonicals, absolute social-image URLs, Person structured data, the sitemap, and the sitemap entry in `robots.txt`.
-4. Record the confirmed origin in `docs/content-source.md`, `docs/content-needs.md`, this runbook, and the Phase 7 implementation record.
+1. `SITE_URL` is effective as `https://www.jeremymshull.com` in production.
+2. Production output uses the root path.
+3. The deployed output emits production canonicals, absolute social-image URLs, Person structured data, the sitemap, and the sitemap entry in `robots.txt`.
+4. The confirmed origin is recorded in `docs/content-source.md`, `docs/content-needs.md`, this runbook, and the Phase 7 implementation record.
 
 Do not add the production `SITE_URL` to Preview. Vercel automatically adds `X-Robots-Tag: noindex` to preview deployments, and this repository intentionally omits origin-dependent metadata when an environment has no confirmed origin.
 
@@ -84,6 +87,17 @@ After the redeploy, validate the stable production domain rather than a commit-s
 - No secret or private environment value appears in HTML, JavaScript, source maps, build logs, or public responses.
 - Navigation, responsive layouts, keyboard operation, 200% zoom, reduced motion, and the interactive 404 receive a final live pass.
 
+Automated live validation completed on 2026-09-14. All ten indexable routes returned HTTP 200 with the expected canonical URL, Open Graph URL and image, Twitter image, Person structured data, one `main` landmark, one H1, and `index, follow`. The sitemap contains those ten routes and excludes the 404; `robots.txt` references the production sitemap. The custom missing route returned HTTP 404 with `noindex, follow`. The social image returned HTTP 200 as WebP, 21 discovered internal links and assets returned successfully, selected private/source paths returned HTTP 404, and the apex domain returned a permanent redirect to the confirmed `www` origin. The only `http://` string found in page HTML was the non-fetching SVG namespace identifier.
+
+The production dependency audit initially found six advisories. The current dependency update raises Astro to 7.3.2 and Sharp to 0.35.4 and pins patched `js-yaml` and SVGO versions through workspace overrides. A frozen install, `pnpm audit --prod`, Astro diagnostics, and all three supported build configurations subsequently passed; the follow-up production audit reports no known vulnerabilities.
+
+## Remaining checks
+
+- Confirm in the Vercel dashboard that the production deployment source is the intended `main` commit, Astro was detected, and the deployment log contains no unresolved warning or error.
+- Confirm Web Analytics and Speed Insights remain disabled.
+- Confirm preview and generated deployment URLs use the intended deployment protection and remain excluded from indexing.
+- Complete the final manual keyboard, 200% zoom, operating-system reduced-motion, physical-device, and responsive-navigation checks on the live site.
+
 ## Optional services
 
-A custom domain and Google Search Console remain deferred. Configure neither unless the portfolio owner explicitly approves it after the initial Vercel deployment is complete.
+The custom production domain is configured. Google Search Console remains deferred; configure it only if the portfolio owner explicitly approves it.

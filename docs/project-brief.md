@@ -34,4 +34,4 @@ The content system supports Case Intake and SLA Automation, Slack Contact Quick 
 
 ## Current scope
 
-Phases 0 through 6 are complete: project initialization, design foundation, typed content architecture, the recruiter-first homepage, the published project index and case-study system, supporting routes, restrained visual polish, selective Phosphor icon use, generated project title cards for list surfaces, and the pre-launch accessibility, responsive, performance, security, and SEO reviews. Production deployment remains assigned to Phase 7 after the final Vercel origin is known.
+Phases 0 through 6 are complete: project initialization, design foundation, typed content architecture, the recruiter-first homepage, the published project index and case-study system, supporting routes, restrained visual polish, selective Phosphor icon use, generated project title cards for list surfaces, and the pre-launch accessibility, responsive, performance, security, and SEO reviews. Phase 7 is in progress: the portfolio is deployed to Vercel Hobby at `https://www.jeremymshull.com`, with final dashboard review and manual live checks still pending.

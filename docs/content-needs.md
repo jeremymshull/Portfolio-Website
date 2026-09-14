@@ -18,5 +18,4 @@ These unresolved items are non-blocking for the completed homepage. `content-sou
 
 ## Deployment and metadata
 
-- Record the final Vercel production URL after deployment.
-- Confirm whether a custom domain will be selected later; none is currently approved.
+- Resolved on 2026-09-14: the portfolio is deployed to Vercel Hobby at `https://www.jeremymshull.com`, which is the confirmed production origin and custom hostname.

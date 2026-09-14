@@ -429,11 +429,11 @@ Project content below is approved for publication subject to the evidence bounda
 
 ## Deployment and metadata
 
-- **Production URL:** Placeholder
+- **Production URL:** [https://www.jeremymshull.com](https://www.jeremymshull.com)
 - **Production hosting target:** Vercel Hobby
-- **Source repository visibility:** Private GitHub repository
-- **Production origin:** Configurable until the final Vercel URL is established
-- **Custom domain:** Not selected; configure one only if a later decision approves it
+- **Source repository visibility:** Public by design for portfolio transparency; secrets and local environment files remain excluded from source control
+- **Production origin:** `https://www.jeremymshull.com`
+- **Custom domain:** `jeremymshull.com`, with `www.jeremymshull.com` as the confirmed production hostname
 - **Earlier GitHub Pages validation:** Builds using `/Portfolio-Website` were repository-subpath compatibility checks during completed phases, not the final deployment target
 - **Final site description:** Portfolio of Salesforce projects focused on automation, Apex, Lightning Web Components, integrations, and practical platform solutions.
 - **Social-sharing image:** `source-assets/images/jeremy-shull-salesforce-title-card.png`

@@ -32,9 +32,9 @@ Verified skills and certifications live in `src/data/skills.ts` and `src/data/ce
 
 ## Deployment configuration
 
-Vercel Hobby is the chosen production hosting target, connected to the private GitHub source repository. The final Vercel production URL has not yet been established, and no custom domain has been selected. Keep deployment values configurable:
+The portfolio is deployed to Vercel Hobby at [https://www.jeremymshull.com](https://www.jeremymshull.com). The GitHub source repository is intentionally public for portfolio transparency; secrets and local environment files remain excluded from source control. Keep deployment values configurable:
 
-- `SITE_URL`: the final Vercel production origin when confirmed.
+- `SITE_URL`: `https://www.jeremymshull.com` in the Vercel Production environment.
 - `BASE_PATH`: `/` for the planned Vercel deployment. `/Portfolio-Website` remains available only for the repository-subpath compatibility builds used during earlier validation.
 
 Static Astro deployment uses Vercel's zero-configuration framework support; no Vercel adapter or server runtime is required. See [docs/deployment.md](docs/deployment.md) for the build settings, source-control gate, first-deployment steps, and post-deployment validation checklist.
