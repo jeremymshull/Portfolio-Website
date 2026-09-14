@@ -12,6 +12,13 @@ dist/
 .env.*
 !.env.example
 
+# local AI-agent and review workflow
+/AGENTS.md
+/.agents/
+/skills-lock.json
+/docs/phase-audit.md
+/docs/phase-6-quality-review.md
+
 # editor and operating-system files
 .DS_Store
 Thumbs.db

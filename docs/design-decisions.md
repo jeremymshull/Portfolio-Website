@@ -107,3 +107,13 @@ The game starts after a brief pause for visitors who allow motion. Keyboard inpu
 The production deployment retains Astro's existing static output and uses Vercel's zero-configuration Astro support. No Vercel adapter, server runtime, `vercel.json`, analytics product, or deployment CLI dependency is added. Vercel will build the repository root with the frozen pnpm lockfile, `pnpm build`, and the generated `dist` directory. The final `SITE_URL` remains unset until the first production deployment establishes the real HTTPS origin; `BASE_PATH` remains `/` for Vercel.
 
 A minimal GitHub Actions workflow provides a repeatable `Validate / build` status check for pull requests and `main`. Preview and generated deployment URLs should use Vercel Authentication with Standard Protection, while the public production domain remains accessible. The Vercel GitHub App should receive access only to this repository where practical. Custom-domain and Google Search Console work remain explicitly deferred until separately approved.
+
+## 2026-09-14 - Confirmed production origin
+
+The portfolio owner confirmed `https://www.jeremymshull.com` as the final Vercel Hobby production origin and custom hostname. `SITE_URL` remains environment-driven in Astro and is set to this exact HTTPS origin for production; `BASE_PATH` remains `/`. Live output confirms origin-aware canonicals, social metadata, Person structured data, sitemap output, and the sitemap reference in `robots.txt`. Google Search Console remains deferred pending separate approval.
+
+The source repository is intentionally public for portfolio transparency, superseding the earlier private-repository direction recorded on 2026-08-28. Secrets and local environment files remain excluded through the existing environment-file ignore rules and static-site security safeguards.
+
+## 2026-09-14 - Production dependency remediation
+
+The Phase 7 production audit identified advisories affecting Astro, Sharp, `js-yaml`, and SVGO. Astro and Sharp were raised to patched compatible releases, while `js-yaml` and SVGO use narrow workspace overrides so they remain transitive rather than becoming direct application dependencies. The follow-up frozen install, production audit, Astro diagnostics, default build, confirmed-origin build, and repository-subpath build all pass; the production audit reports no known vulnerabilities.

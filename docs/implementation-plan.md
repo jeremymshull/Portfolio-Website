@@ -90,9 +90,9 @@ Validation completed with a frozen-lockfile dependency check, strict Astro diagn
 
 ## Phase 7 — Deployment
 
-Status: in progress — repository-side preparation completed on 2026-09-03; awaiting the first Vercel deployment and final production URL configuration.
+Status: in progress — deployed to Vercel Hobby at `https://www.jeremymshull.com`; origin-aware output, production dependency remediation, and automated live checks validated on 2026-09-14. Vercel dashboard checks and final manual accessibility/device checks remain.
 
-- Connect the private GitHub source repository to Vercel Hobby through Vercel's Git integration, configure the Astro static production build, and review deployment access and project settings. Retain appropriate repository or branch protections and required checks.
+- Connect the intentionally public GitHub source repository to Vercel Hobby through Vercel's Git integration, configure the Astro static production build, and review deployment access and project settings. Keep secrets and local environment files excluded from source control, and retain appropriate repository or branch protections and required checks.
 - Configure the final production `site` origin after Vercel establishes the public URL. Keep the site static; do not add backend or server functionality without a separately approved requirement.
 - Verify HTTPS and inspect the generated public output for intended routes, assets, and publication boundaries.
 - Verify live canonical URLs, page metadata, sitemap, `robots.txt`, and search-engine indexability against the actual deployed URL.
