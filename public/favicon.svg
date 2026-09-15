@@ -1,5 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
   <title id="title">Jeremy Shull portfolio</title>
+  <desc id="desc">An olive J and pixel-stepped code chevron on a rounded charcoal tile.</desc>
   <rect width="64" height="64" rx="12" fill="#161B22"/>
-  <path d="M19 17h12v23c0 8-4 12-12 12h-3v-9h2c3 0 4-1 4-4V26h-3v-9Zm17 0h12v9H36v-9Zm0 13h12v22H36V30Z" fill="#9DBC7C"/>
+  <g fill="#9DBC7C">
+    <path d="M16 16h16v20c0 8-4 12-12 12h-4v-8h4c3 0 4-1 4-4V24h-8Z"/>
+    <path d="M36 20h8v4h4v4h4v8h-4v4h-4v4h-8v-8h4v-8h-4Z"/>
+  </g>
 </svg>
