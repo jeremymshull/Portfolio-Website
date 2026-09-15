@@ -46,6 +46,21 @@ I build Salesforce automation, Lightning experiences, and integrations designed 
 
 I’m pursuing Salesforce Developer, Salesforce Administrator, CRM Analyst, Salesforce Business Analyst, Salesforce Support Engineer, and associate consulting opportunities.
 
+## Approved standalone About narrative
+
+The following facts were approved by the portfolio owner on 2026-09-15 for the standalone About page:
+
+- Jeremy did not take a traditional path into development.
+- He earned a B.S. in Worship & Music Studies: Worship Leadership in 2014.
+- He has more than a decade of customer-service experience at Starbucks, including several years of leadership experience as a Shift Supervisor.
+- He remains involved in worship ministry and church audio, video, and livestream technology.
+- Curiosity about development eventually led him to Salesforce.
+- His Salesforce path includes Salesforce Platform Developer I, Cloud Code Academy Developer Kickstart, and Salesforce Administrator.
+- Today he builds with Apex, Lightning Web Components, Flow, integrations, and related Salesforce technologies.
+- He cares about understanding why systems work and how architecture, testing, review, and clear technical decisions fit together.
+- He uses AI to explore approaches, debug, and accelerate implementation while remaining responsible for understanding, reviewing, testing, and explaining his work.
+- Personal interests approved for concise publication include guitar and music, worship ministry, church technology, fitness, and gaming.
+
 ## Approved skills
 
 Use **Flows** as the umbrella term; do not list individual Flow types separately.
