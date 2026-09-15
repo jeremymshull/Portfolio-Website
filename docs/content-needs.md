@@ -14,7 +14,7 @@ These unresolved items are non-blocking for the completed homepage. `content-sou
 
 ## About narrative
 
-- Supply and approve any deeper career-transition background, prior-experience narrative, or continuous-learning story before expanding the standalone About page beyond the verified Salesforce focus, skills, and work preferences in `content-source.md`.
+- Resolved on 2026-09-15: the portfolio owner supplied and approved the career-transition background, prior experience, development approach, responsible AI workflow, and personal interests used on the standalone About page. The verified facts are recorded in `content-source.md`.
 
 ## Deployment and metadata
 

@@ -2,30 +2,57 @@
 import { Image } from 'astro:assets';
 import aboutImage from '../../source-assets/images/jeremy-shull-about.jpg';
 import ButtonLink from '../components/ButtonLink.astro';
+import Icon from '../components/Icon.astro';
 import PageHero from '../components/PageHero.astro';
-import TagList from '../components/TagList.astro';
-import { getPublishedSkills } from '../data/skills';
 import { siteProfile } from '../data/site';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const workingSkills = getPublishedSkills()
-  .filter((skill) => skill.category === 'Business and Operations')
-  .map((skill) => skill.name);
 const contactPath = `${import.meta.env.BASE_URL}contact/`;
 const resumePath = `${import.meta.env.BASE_URL}resume/Jeremy-Shull-Salesforce-Resume.pdf`;
+
+const journey = [
+  {
+    label: '2014',
+    title: 'A foundation in music and ministry',
+    description:
+      'I earned a B.S. in Worship & Music Studies: Worship Leadership and continued serving in worship ministry.',
+    icon: 'music-notes',
+  },
+  {
+    label: 'More than a decade',
+    title: 'Customer service and leadership',
+    description:
+      'My time at Starbucks included several years as a Shift Supervisor, where clear communication and dependable processes mattered every day.',
+    icon: 'coffee',
+  },
+  {
+    label: 'Ongoing',
+    title: 'Church technology',
+    description:
+      'Working with church audio, video, and livestream systems kept creativity and technical problem-solving connected.',
+    icon: 'broadcast',
+  },
+  {
+    label: 'Salesforce path',
+    title: 'From curiosity to building',
+    description:
+      "That curiosity led me to Salesforce, earning my Platform Developer I certification, completing Cloud Code Academy's Developer Kickstart, earning my Salesforce Administrator certification, and building hands-on projects with Apex, LWC, Flow, and integrations.",
+    icon: 'code',
+  },
+] as const;
 ---
 
 <BaseLayout
   title="About Jeremy Shull | Salesforce portfolio"
-  description="Jeremy Shull is a Salesforce Developer and Administrator focused on practical automation, Lightning experiences, integrations, and business processes."
+  description="Jeremy Shull’s path from music, customer service, and leadership into Salesforce development and administration."
 >
   <PageHero
     eyebrow="About"
-    title="Practical Salesforce systems."
-    description="A concise view of my Salesforce focus, working approach, and current role preferences."
+    title="I didn’t take the traditional path into development."
+    description="I came to Salesforce through music, customer service, leadership, and a curiosity about how better systems get built."
   />
 
-  <section class="section section--surface" aria-labelledby="about-focus-title">
+  <section class="section section--surface" aria-labelledby="about-story-title">
     <div class="container about-page__profile">
       <figure class="about-page__portrait">
         <Image
@@ -38,35 +65,117 @@ const resumePath = `${import.meta.env.BASE_URL}resume/Jeremy-Shull-Salesforce-Re
       </figure>
 
       <div class="about-page__copy">
-        <h2 id="about-focus-title">Building useful Salesforce systems.</h2>
-        <p>{siteProfile.introduction}</p>
-        <h3>Role focus</h3>
+        <p class="eyebrow">How I got here</p>
+        <h2 id="about-story-title">A different starting point, with useful carryover.</h2>
+        <div class="about-page__narrative">
+          <p>
+            My degree is in Worship & Music Studies, and I spent more than a decade in customer service at Starbucks. Several of those years were as a Shift Supervisor. That work taught me how much clear communication, reliable processes, and steady problem-solving matter when people are counting on you.
+          </p>
+          <p>
+            I stayed involved in worship ministry and church technology along the way. Music, audio, video, and livestream systems gave me a practical place to keep learning how creative work and technical systems fit together.
+          </p>
+          <p>
+            Curiosity about development eventually led me to Salesforce. My path has included earning Salesforce Platform Developer I, completing Cloud Code Academy Developer Kickstart, and earning the Salesforce Administrator certification. Today I build with Apex, Lightning Web Components, Flow, integrations, and the wider Salesforce platform.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="journey-title">
+    <div class="container about-page__section-inner">
+      <div class="about-page__section-heading">
+        <p class="eyebrow">The short version</p>
+        <h2 id="journey-title">A few stops that shaped how I work.</h2>
+      </div>
+
+      <ol class="about-timeline">
+        {journey.map((milestone) => (
+          <li class="about-timeline__item">
+            <span class="about-timeline__icon"><Icon name={milestone.icon} /></span>
+            <div>
+              <p class="about-timeline__label">{milestone.label}</p>
+              <h3>{milestone.title}</h3>
+              <p>{milestone.description}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--surface" aria-labelledby="build-title">
+    <div class="container about-page__section-inner">
+      <div class="about-page__section-heading">
+        <p class="eyebrow">How I build</p>
+        <h2 id="build-title">I want to understand the system, not just make it run.</h2>
+        <p>
+          I care about why a solution works and how its pieces fit together. That means thinking through the architecture, testing the behavior, reviewing the result, and being able to explain the decisions behind it.
+        </p>
+      </div>
+
+      <div class="build-principles">
+        <article>
+          <p class="build-principles__number">01</p>
+          <h3>See the whole system</h3>
+          <p>I look at data, automation, integrations, and the user experience as connected parts of the same solution.</p>
+        </article>
+        <article>
+          <p class="build-principles__number">02</p>
+          <h3>Test the behavior</h3>
+          <p>I test the expected path and the edge cases, then revisit anything that does not behave the way I intended.</p>
+        </article>
+        <article>
+          <p class="build-principles__number">03</p>
+          <h3>Review and explain</h3>
+          <p>I review my work closely and make sure I can explain the choices, tradeoffs, and limits in plain language.</p>
+        </article>
+      </div>
+
+      <p class="about-page__ai-note">
+        AI is part of that workflow. I use it to explore approaches, debug problems, and move implementation forward, but I am still responsible for understanding, reviewing, testing, and explaining what I build.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="beyond-title">
+    <div class="container about-page__beyond">
+      <div>
+        <p class="eyebrow">Beyond Salesforce</p>
+        <h2 id="beyond-title">There is usually a guitar or a controller nearby.</h2>
+      </div>
+      <div class="about-page__beyond-copy">
+        <p>
+          Music is still a big part of my life. I play guitar, stay involved in worship ministry, and enjoy the behind-the-scenes work of church audio, video, and livestream technology.
+        </p>
+        <p>
+          Outside of that, I spend time on fitness and gaming. Both give me a good reset, although they bring out very different versions of my competitive side.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface" aria-labelledby="availability-title">
+    <div class="container about-page__availability">
+      <div>
+        <p class="eyebrow">Location and availability</p>
+        <h2 id="availability-title">Based near Indianapolis and open to the right conversation.</h2>
         <p>{siteProfile.targetRoles}</p>
+      </div>
+
+      <div>
+        <dl class="detail-list">
+          <div><dt>Based in</dt><dd>{siteProfile.location}</dd></div>
+          <div><dt>Availability</dt><dd>{siteProfile.availability}</dd></div>
+          <div><dt>Relocation</dt><dd>{siteProfile.relocation}</dd></div>
+          <div><dt>Independent work</dt><dd>{siteProfile.consulting}</dd></div>
+        </dl>
         <div class="button-group">
           <ButtonLink href={contactPath} icon="email">Contact Jeremy</ButtonLink>
           <ButtonLink href={resumePath} variant="secondary" icon="download" download="Jeremy-Shull-Salesforce-Resume.pdf">
             Download resume
           </ButtonLink>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="working-approach-title">
-    <div class="container about-page__details">
-      <div>
-        <h2 id="working-approach-title">Working approach</h2>
-        <TagList items={workingSkills} label="Business and operations skills" />
-      </div>
-
-      <div>
-        <h2>Location and availability</h2>
-        <dl class="detail-list">
-          <div><dt>Based in</dt><dd>{siteProfile.location}</dd></div>
-          <div><dt>Role availability</dt><dd>{siteProfile.availability}</dd></div>
-          <div><dt>Relocation</dt><dd>{siteProfile.relocation}</dd></div>
-          <div><dt>Independent work</dt><dd>{siteProfile.consulting}</dd></div>
-        </dl>
       </div>
     </div>
   </section>
