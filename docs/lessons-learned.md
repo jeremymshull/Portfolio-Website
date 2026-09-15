@@ -7,7 +7,7 @@
 - Two original portrait assets are preserved byte-for-byte under `source-assets/images`. They remain excluded from the public site pending placement, crop, and alt-text review.
 - The installed Taste skill contains React, Tailwind, GSAP, and typography defaults that conflict with this project's explicit Astro and visual constraints. Its useful role here is critique, not architecture.
 - Repository-neutral GitHub Pages support is simplest when both the production origin and base path are environment-driven from the start.
-- Browser QA was completed for desktop, mobile, approximate 200% zoom, mobile-menu behavior, focus visibility, target sizing, overflow, and console errors. Operating-system reduced-motion emulation and a complete manual keyboard traversal remain final human checks.
+- Browser QA was completed for desktop, mobile, approximate 200% zoom, mobile-menu behavior, focus visibility, target sizing, overflow, and console errors. Operating-system reduced-motion emulation and a complete manual keyboard traversal were deferred at this point and later completed during Phase 7.
 - A wide single-column hero is a better Phase 1 verification shell than an internal status panel because it preserves headline readability without introducing final portfolio content.
 - pnpm 11 records approved dependency scripts with `allowBuilds`; using that setting alone avoids redundant esbuild policy.
 - Astro's built-in content collection schema provides validation and generated types without adding a content-system dependency.
@@ -28,3 +28,10 @@
 - Importing individual Phosphor SVG assets and rendering them as CSS masks provides a consistent icon system without an icon font, framework component, or client-side runtime.
 - SEO features that require an absolute origin should be conditional until deployment: local builds remain valid, while configured builds can emit canonicals, social-image URLs, structured data, sitemaps, and sitemap-aware `robots.txt` output.
 - pnpm 11 reads dependency overrides from `pnpm-workspace.yaml`; placing them under the legacy `package.json` `pnpm` field is ignored.
+
+## 2026-09-14
+
+- Earlier deferred accessibility checks should remain dated historical records and receive an explicit completion record once production QA is finished. Keyboard-only navigation, 200% zoom, reduced motion, physical-device use, and responsive navigation all passed on the live site.
+- Reduced-motion behavior can preserve an error page's recovery content while disabling an optional game. The 404 page keeps its message static and explains the behavior when reduced motion is enabled.
+- Enabling Web Analytics or Speed Insights in the Vercel project does not mean an Astro application has integrated those products or is collecting data through them; documentation should distinguish project settings from application implementation.
+- An open-ended Node engine range can trigger a valid future-upgrade warning even when the current deployment succeeds. Pinning an appropriate major line can be handled as later dependency maintenance without blocking the verified release.
