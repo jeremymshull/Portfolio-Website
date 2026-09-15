@@ -3,6 +3,7 @@ import { getImage } from 'astro:assets';
 import '@fontsource-variable/inter';
 import '@fontsource-variable/jetbrains-mono';
 import '@fontsource-variable/syne';
+import Analytics from '@vercel/analytics/astro';
 import socialShareSource from '../../source-assets/images/jeremy-shull-salesforce-title-card.png';
 import KonamiListener from '../components/KonamiListener.astro';
 import SiteFooter from '../components/SiteFooter.astro';
@@ -69,6 +70,7 @@ const structuredData = Astro.site
     {socialShareUrl && <meta name="twitter:image:alt" content="Jeremy Shull, Salesforce Developer and Administrator." />}
     {structuredData && <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
     <title>{title}</title>
+    <Analytics />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
