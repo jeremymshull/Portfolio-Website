@@ -20,7 +20,7 @@ Status: complete — validated on 2026-08-05.
 - Build a minimal homepage shell using only verified positioning language and foundation copy.
 - Keep production origin and GitHub Pages base path configurable.
 
-Validation completed with the supported Node and pnpm versions: frozen-lockfile installation, peer dependency check, Astro diagnostics, default production build, repository-subpath build, and rendered responsive/accessibility checks all passed. Full manual keyboard traversal and operating-system reduced-motion verification remain pre-launch human checks.
+Validation completed with the supported Node and pnpm versions: frozen-lockfile installation, peer dependency check, Astro diagnostics, default production build, repository-subpath build, and rendered responsive/accessibility checks all passed. Full manual keyboard traversal and operating-system reduced-motion verification were deferred to launch and completed during Phase 7.
 
 ## Phase 2 — Content architecture
 
@@ -40,7 +40,7 @@ Status: complete — validated on 2026-08-21.
 - Add verified project, About, skill, certification, and contact previews.
 - Review the 30-second recruiter scan goal.
 
-Validation completed with strict Astro diagnostics, the default production build, the GitHub Pages production build using `/Portfolio-Website`, rendered browser review, image-alt and landmark review, link/path inspection, and horizontal-overflow checks. A complete manual keyboard traversal, operating-system reduced-motion verification, and physical-device testing remain pre-launch human checks.
+Validation completed with strict Astro diagnostics, the default production build, the GitHub Pages production build using `/Portfolio-Website`, rendered browser review, image-alt and landmark review, link/path inspection, and horizontal-overflow checks. A complete manual keyboard traversal, operating-system reduced-motion verification, and physical-device testing were deferred to launch and completed during Phase 7.
 
 ## Post-Phase-3 checkpoint — Security and SEO readiness
 
@@ -63,7 +63,7 @@ Status: complete — validated on 2026-08-21.
 
 - Build the project index, reusable cards, dynamic case-study routes, and missing-media states.
 
-Validation completed with a frozen-lockfile dependency check, strict Astro diagnostics, the default static production build, and the GitHub Pages production build using `/Portfolio-Website`. The generated output contains the project index and exactly four published case-study routes. Rendered browser review covered project navigation, semantic structure, approved image loading, missing-media states, console output, and desktop horizontal overflow. Complete manual keyboard traversal, browser-native 200% zoom, operating-system reduced-motion verification, and physical-device testing remain pre-launch human checks.
+Validation completed with a frozen-lockfile dependency check, strict Astro diagnostics, the default static production build, and the GitHub Pages production build using `/Portfolio-Website`. The generated output contains the project index and exactly four published case-study routes. Rendered browser review covered project navigation, semantic structure, approved image loading, missing-media states, console output, and desktop horizontal overflow. Complete manual keyboard traversal, browser-native 200% zoom, operating-system reduced-motion verification, and physical-device testing were deferred to launch and completed during Phase 7.
 
 ## Phase 5 — Supporting pages
 
@@ -71,7 +71,7 @@ Status: complete — validated on 2026-08-28.
 
 - Build Skills, Certifications, About, Contact, and 404 routes.
 
-Validation completed with a frozen-lockfile dependency check, strict Astro diagnostics, the default static production build, and the GitHub Pages production build using `/Portfolio-Website`. Eleven pages are generated, including all five Phase 5 routes. Rendered browser review covered page titles, H1 structure, active navigation, approved About-image use, public contact targets, 404 indexing metadata, console output, and desktop horizontal overflow. Complete manual keyboard traversal, browser-native 200% zoom, operating-system reduced-motion verification, and physical-device testing remain pre-launch human checks.
+Validation completed with a frozen-lockfile dependency check, strict Astro diagnostics, the default static production build, and the GitHub Pages production build using `/Portfolio-Website`. Eleven pages are generated, including all five Phase 5 routes. Rendered browser review covered page titles, H1 structure, active navigation, approved About-image use, public contact targets, 404 indexing metadata, console output, and desktop horizontal overflow. Complete manual keyboard traversal, browser-native 200% zoom, operating-system reduced-motion verification, and physical-device testing were deferred to launch and completed during Phase 7.
 
 ## Phase 6 — Visual polish, quality, accessibility, security, and SEO review
 
@@ -86,11 +86,11 @@ Status: complete — validated on 2026-08-30.
 - Complete the pre-launch security review: scan the repository and generated `dist/`, audit dependencies, inspect client bundles for secrets or unintended data, verify that only intended public content is built, review external resources, confirm the expected static attack surface, and assess any later forms or user-controlled input.
 - Complete the pre-launch SEO review: verify unique titles, descriptions, canonical URLs, Open Graph and social-image handling, sitemap generation, `robots.txt`, semantic headings, crawlable internal links, published-content indexability, unpublished-content exclusion, verified structured data, broken links and 404 behavior, mobile usability, image optimization, and performance.
 
-Validation completed with a frozen-lockfile dependency check, strict Astro diagnostics, the default static production build, a configured-root production build, and the repository-subpath compatibility build. The production dependency audit reports no known vulnerabilities. Rendered production-preview review covered all eleven HTML routes plus desktop, tablet, and narrow-mobile layouts; metadata, sitemap, `robots.txt`, internal links, generated image output, source and output security scans, and public route boundaries were also inspected. Full manual keyboard traversal, browser-native 200% zoom, operating-system reduced-motion verification, physical-device testing, and final live-origin checks remain pre-launch or Phase 7 human checks.
+Validation completed with a frozen-lockfile dependency check, strict Astro diagnostics, the default static production build, a configured-root production build, and the repository-subpath compatibility build. The production dependency audit reports no known vulnerabilities. Rendered production-preview review covered all eleven HTML routes plus desktop, tablet, and narrow-mobile layouts; metadata, sitemap, `robots.txt`, internal links, generated image output, source and output security scans, and public route boundaries were also inspected. Full manual keyboard traversal, browser-native 200% zoom, operating-system reduced-motion verification, physical-device testing, and final live-origin checks were deferred to Phase 7 and are now complete.
 
 ## Phase 7 — Deployment
 
-Status: in progress — deployed to Vercel Hobby at `https://www.jeremymshull.com`; origin-aware output, production dependency remediation, and automated live checks validated on 2026-09-14. Vercel dashboard checks and final manual accessibility/device checks remain.
+Status: complete — deployed to Vercel Hobby at `https://www.jeremymshull.com` and validated on 2026-09-14.
 
 - Connect the intentionally public GitHub source repository to Vercel Hobby through Vercel's Git integration, configure the Astro static production build, and review deployment access and project settings. Keep secrets and local environment files excluded from source control, and retain appropriate repository or branch protections and required checks.
 - Configure the final production `site` origin after Vercel establishes the public URL. Keep the site static; do not add backend or server functionality without a separately approved requirement.
@@ -100,3 +100,5 @@ Status: in progress — deployed to Vercel Hobby at `https://www.jeremymshull.co
 - Configure and validate a custom domain only if one is selected later.
 - If the owner chooses to use Google Search Console, connect and verify it, expose or submit the sitemap for discovery, and perform final search-engine indexability checks.
 - Complete deployment and operational documentation without claiming an unconfirmed production URL or custom domain.
+
+Validation completed against the production deployment from `main` commit `fc68a4e0190b34ef3cb32772bce847794a44d4e7`. Vercel reported Ready after a successful static Astro build using pnpm 11.9.0, Astro 7.3.2, and Sharp 0.35.4; all expected routes and `sitemap-index.xml` were generated without build errors. Automated live-origin validation, a clean production dependency audit, Astro diagnostics, the production build, keyboard-only navigation, 200% zoom, reduced-motion behavior, physical-device testing, and repeated responsive-navigation checks all passed. Vercel Authentication and Standard Protection are enabled for protected deployments. Web Analytics and Speed Insights are enabled at the project level but are not integrated into the Astro application. Vercel's warning about the open-ended Node engine range is recorded as a non-blocking future cleanup item in `docs/deployment.md`.

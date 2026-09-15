@@ -1,6 +1,6 @@
 # Vercel deployment runbook
 
-Status: deployed to Vercel Hobby at `https://www.jeremymshull.com`; production-origin configuration, dependency remediation, and automated live checks completed on 2026-09-14. Remaining dashboard and manual checks are listed below.
+Status: complete — deployed to Vercel Hobby at `https://www.jeremymshull.com` and validated on 2026-09-14.
 
 The confirmed public production origin is `https://www.jeremymshull.com`. Google Search Console remains unapproved and unconfigured.
 
@@ -19,7 +19,7 @@ The confirmed public production origin is `https://www.jeremymshull.com`. Google
 - Production base path: `/`.
 - Production origin: `https://www.jeremymshull.com`.
 
-Vercel supports static Astro sites without an adapter or a `vercel.json` file. This project does not use Vercel Functions, server-side rendering, Web Analytics, Speed Insights, cookies, or third-party forms.
+Vercel supports static Astro sites without an adapter or a `vercel.json` file. This project does not use Vercel Functions, server-side rendering, cookies, or third-party forms. Web Analytics and Speed Insights are enabled in the Vercel project, but neither product is integrated into the Astro application, so the site is not yet collecting data through those products.
 
 ## Source-control gate
 
@@ -47,17 +47,19 @@ Confirm these settings before selecting Deploy:
 
 Do not create `SITE_URL` for the first deployment because the production URL is not known yet. `BASE_PATH` defaults to `/`; it may be added explicitly as `/` for Production and Preview, but it is not required for the first build.
 
-Keep Web Analytics and Speed Insights disabled because analytics and tracking have not been approved. Under Deployment Protection, use Vercel Authentication with Standard Protection for preview and generated deployment URLs while leaving the production domain publicly accessible.
+Web Analytics and Speed Insights are enabled at the Vercel project level but are not integrated into the Astro application. Vercel Authentication and Standard Protection are enabled for protected deployments and require login; the production domain remains publicly accessible.
 
 ## First deployment record
 
 Confirmed on 2026-09-14:
 
 1. The stable public production URL is `https://www.jeremymshull.com`.
-2. The live site returns the expected Astro-generated routes and assets.
-3. Production pages emit canonicals, social metadata, and structured data against the confirmed origin, demonstrating that the production `SITE_URL` configuration and redeploy took effect.
+2. Vercel reports the production deployment as Ready and cloned the expected `main` commit, `fc68a4e0190b34ef3cb32772bce847794a44d4e7` (`Merge pull request #3 from jeremymshull/codex/phase-7-finalization`).
+3. The Vercel build used pnpm 11.9.0, installed Astro 7.3.2 and Sharp 0.35.4, completed the Astro static build, generated all expected routes and `sitemap-index.xml`, and reported no build errors.
+4. The live site returns the expected Astro-generated routes and assets.
+5. Production pages emit canonicals, social metadata, and structured data against the confirmed origin, demonstrating that the production `SITE_URL` configuration and redeploy took effect.
 
-The exact deployment source commit, Vercel framework-detection record, and build-log warnings have not been independently verified in the Vercel dashboard.
+Vercel emitted one non-blocking warning because the current `package.json` engine range, `"node": ">=22.12.0"`, permits a future automatic major Node upgrade. Narrowing that range is a future dependency-maintenance task rather than a Phase 7 blocker.
 
 ## Final-origin configuration
 
@@ -91,12 +93,17 @@ Automated live validation completed on 2026-09-14. All ten indexable routes retu
 
 The production dependency audit initially found six advisories. The current dependency update raises Astro to 7.3.2 and Sharp to 0.35.4 and pins patched `js-yaml` and SVGO versions through workspace overrides. A frozen install, `pnpm audit --prod`, Astro diagnostics, and all three supported build configurations subsequently passed; the follow-up production audit reports no known vulnerabilities.
 
-## Remaining checks
+## Completed dashboard and manual checks
 
-- Confirm in the Vercel dashboard that the production deployment source is the intended `main` commit, Astro was detected, and the deployment log contains no unresolved warning or error.
-- Confirm Web Analytics and Speed Insights remain disabled.
-- Confirm preview and generated deployment URLs use the intended deployment protection and remain excluded from indexing.
-- Complete the final manual keyboard, 200% zoom, operating-system reduced-motion, physical-device, and responsive-navigation checks on the live site.
+- The production deployment source, branch, framework build, package versions, generated routes, sitemap, and build result were verified in Vercel.
+- Vercel Authentication and Standard Protection are enabled for protected deployments and require login.
+- Web Analytics and Speed Insights are enabled at the Vercel project level but remain unimplemented in the Astro application.
+- Keyboard-only navigation passed without an obvious focus, activation, or focus-trap issue.
+- Browser zoom at 200% passed on the homepage and representative content.
+- Reduced-motion testing passed. The homepage behaves normally; the 404 page intentionally disables its game and explains that the message will remain static.
+- Physical mobile-device testing and repeated responsive-navigation use passed.
+
+No Phase 7 deployment or QA blocker remains. The open-ended Node engine range is a non-blocking future cleanup item.
 
 ## Optional services
 
