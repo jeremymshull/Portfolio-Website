@@ -1,6 +1,7 @@
 import type { ImageMetadata } from 'astro';
 import caseIntakeTitleCard from '../assets/project-title-cards/case-intake-and-sla-automation.webp';
 import jobApplicationTitleCard from '../assets/project-title-cards/job-application-tracker.webp';
+import lwcContactManagerTitleCard from '../assets/project-title-cards/lwc-contact-manager.webp';
 import slackContactTitleCard from '../assets/project-title-cards/slack-contact-quick-action.webp';
 import weatherTitleCard from '../assets/project-title-cards/weather-lightning-web-component.webp';
 
@@ -25,6 +26,10 @@ const projectTitleCards: Readonly<Record<string, ProjectTitleCard>> = {
   'job-application-tracker': {
     image: jobApplicationTitleCard,
     alt: 'Generated abstract title artwork, not a project screenshot, showing an application moving through connected stages with follow-up task symbols.',
+  },
+  'lwc-contact-manager': {
+    image: lwcContactManagerTitleCard,
+    alt: 'Generated abstract title artwork, not a project screenshot, showing an Account connected to editable contact records and an add action.',
   },
 };
 

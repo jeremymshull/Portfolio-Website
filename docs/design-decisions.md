@@ -125,3 +125,15 @@ Vercel reports the production deployment from `main` commit `fc68a4e0190b34ef3cb
 Vercel Authentication and Standard Protection are enabled for protected deployments and require login. Web Analytics and Speed Insights are enabled at the Vercel project level, superseding the earlier direction to leave them disabled. Neither product is integrated into the Astro application, so their enabled project settings do not establish active data collection. Adding either integration to the application remains subject to the project's privacy and security review rules.
 
 Manual production QA passed for keyboard-only navigation, 200% browser zoom, operating-system reduced motion, physical mobile devices, and repeated responsive-navigation use. With reduced motion enabled, the homepage behaves normally and the 404 page intentionally keeps its message static, disables the game, and explains the reduced-motion behavior. Vercel's warning that the `>=22.12.0` Node engine range may permit a future automatic major upgrade is accepted for this deployment and recorded as a non-blocking dependency-maintenance item.
+
+## 2026-09-15 - Optional third-party project video
+
+Project content may define one optional provider-neutral video object containing an accessible title, embed URL, public watch URL, and fallback-link label. The shared case-study template renders the object through a reusable responsive component; projects without video data render no video section and retain their existing output.
+
+The first approved use is the LWC Contact Manager demo hosted by Loom. The standard Loom iframe is lazy-loaded, does not autoplay, and uses no Loom JavaScript SDK or additional package. A visible external link lets visitors open the same recording on Loom. Loading or opening the video sends a request to Loom, which may expose ordinary request data such as the visitor's IP address, browser details, and referring origin and may permit Loom-controlled cookies or storage under Loom's policies. The recording's continued availability also depends on its Loom sharing settings and hosting status.
+
+## 2026-09-16 - LWC Contact Manager publication assets
+
+The approved LWC Contact Manager title card extends the established generated-artwork system as its fifth project image. Its Account, contact-record, editing, and add-action motifs reflect verified project behavior; the full PNG source is retained with the other generated sources, while a cropped 16:9 WebP working asset feeds Astro's responsive image pipeline on the homepage and project index.
+
+The restored `source-assets/images/lwc-contact-manager.png` image is verified real project evidence and remains on the case-study page. It is separate from the generated list-surface artwork and is described only by details visible in the supplied image.
