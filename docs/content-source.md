@@ -423,6 +423,18 @@ Project content below is approved for publication subject to the evidence bounda
 - **Screenshots or diagrams:** No verified public screenshots have been identified.
 - **Image alt text:** Not applicable unless screenshots are selected later.
 
+### LWC Contact Manager
+
+- **Classification:** Training project, originally completed as the final project for Igor's Learn LWC course and extended with inline editing and refactored input handling
+- **Summary:** An Account-record workspace for viewing related contacts, creating contacts, and inline-editing contact details through parent and child Lightning Web Components backed by Apex
+- **Verified functionality:** Account-scoped contact retrieval, embedded contact creation, immediate local table updates through a custom event, editable datatable draft handling, bulk submission of contact edits, success and error toasts, and user-mode Apex data operations
+- **Repository URL:** [https://github.com/jeremymshull/salesforce-lwc-contact-manager](https://github.com/jeremymshull/salesforce-lwc-contact-manager)
+- **Demo URL:** [https://www.loom.com/share/3deb7cd3bb8e47668d02ebbfe753078b](https://www.loom.com/share/3deb7cd3bb8e47668d02ebbfe753078b)
+- **Demo publication:** Approved for an embedded case-study video with a visible Loom fallback link
+- **Screenshot source:** `source-assets/images/lwc-contact-manager.png`
+- **Screenshot verification:** The supplied image shows the Burlington Textiles Corp of America Account and a Related Contacts workspace with an empty contact form and one editable contact row for Jack Rogers
+- **Image alt text:** Salesforce Related Contacts workspace on the Burlington Textiles Corp of America Account showing an empty contact form and one editable contact row for Jack Rogers.
+
 ## Approved project visual strategy
 
 ### Homepage and project index

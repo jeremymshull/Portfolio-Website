@@ -1,0 +1,35 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  title: string;
+  embedUrl: string;
+  watchUrl: string;
+  watchLabel: string;
+}
+
+const { title, embedUrl, watchUrl, watchLabel } = Astro.props;
+---
+
+<section class="case-study__video" aria-labelledby="project-demo-title">
+  <div class="case-study__video-heading">
+    <div>
+      <p class="eyebrow">Video walkthrough</p>
+      <h2 id="project-demo-title">Project demo</h2>
+    </div>
+    <a class="link-with-icon" href={watchUrl} target="_blank" rel="noreferrer noopener">
+      {watchLabel} <Icon name="arrow-square-out" size="small" />
+    </a>
+  </div>
+
+  <div class="case-study__video-frame">
+    <iframe
+      src={embedUrl}
+      title={title}
+      loading="lazy"
+      allow="fullscreen; picture-in-picture"
+      allowfullscreen
+      referrerpolicy="strict-origin-when-cross-origin"
+    ></iframe>
+  </div>
+</section>

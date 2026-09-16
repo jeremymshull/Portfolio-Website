@@ -18,6 +18,13 @@ const projectLinkSchema = z.object({
   url: z.url(),
 });
 
+const projectVideoSchema = z.object({
+  title: nonEmptyText,
+  embedUrl: z.url(),
+  watchUrl: z.url(),
+  watchLabel: nonEmptyText,
+});
+
 const projects = defineCollection({
   loader: glob({ base: './src/content/projects', pattern: '**/*.{md,mdx}' }),
   schema: z
@@ -47,6 +54,7 @@ const projects = defineCollection({
       evidenceNote: nonEmptyText.optional(),
       mediaUnavailableReason: nonEmptyText.optional(),
       media: z.array(projectMediaSchema).min(1).optional(),
+      video: projectVideoSchema.optional(),
       links: z.array(projectLinkSchema).min(1).optional(),
     })
     .superRefine((project, context) => {
